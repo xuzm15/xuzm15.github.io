@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>迁移Blog到Hexo.md | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这学期开始有个想法是在 GitHub 上搭一个自己的博客，一开始的想法是使用 Jekyll ，后来由于要做其他项目于是只做了简单的文章发布功能，同时界面实在谈不上好看。临近过年，终于稍微清闲一些，偶然发觉 Hexo 更容易上手并且效果不错，于是就把博客的内容迁移过来了。
+这里只简单记录一些 Hexo 写文章和发布的命令，配置以及其他教程可以 Google 或者访问 Hexo 的文档
+前置工作关联">
+<meta property="og:type" content="article">
+<meta property="og:title" content="迁移Blog到Hexo.md">
+<meta property="og:url" content="http://yoursite.com/2016/01/26/2016-01-26-迁移Blog到Hexo/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这学期开始有个想法是在 GitHub 上搭一个自己的博客，一开始的想法是使用 Jekyll ，后来由于要做其他项目于是只做了简单的文章发布功能，同时界面实在谈不上好看。临近过年，终于稍微清闲一些，偶然发觉 Hexo 更容易上手并且效果不错，于是就把博客的内容迁移过来了。
+这里只简单记录一些 Hexo 写文章和发布的命令，配置以及其他教程可以 Google 或者访问 Hexo 的文档
+前置工作关联">
+<meta property="og:updated_time" content="2016-02-23T08:43:39.526Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="迁移Blog到Hexo.md">
+<meta name="twitter:description" content="这学期开始有个想法是在 GitHub 上搭一个自己的博客，一开始的想法是使用 Jekyll ，后来由于要做其他项目于是只做了简单的文章发布功能，同时界面实在谈不上好看。临近过年，终于稍微清闲一些，偶然发觉 Hexo 更容易上手并且效果不错，于是就把博客的内容迁移过来了。
+这里只简单记录一些 Hexo 写文章和发布的命令，配置以及其他教程可以 Google 或者访问 Hexo 的文档
+前置工作关联">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2016-01-26-迁移Blog到Hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/26/2016-01-26-迁移Blog到Hexo/" class="article-date">
+  <time datetime="2016-01-26T03:07:31.000Z" itemprop="datePublished">2016-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      迁移Blog到Hexo.md
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这学期开始有个想法是在 GitHub 上搭一个自己的博客，一开始的想法是使用 Jekyll ，后来由于要做其他项目于是只做了简单的文章发布功能，同时界面实在谈不上好看。临近过年，终于稍微清闲一些，偶然发觉 Hexo 更容易上手并且效果不错，于是就把博客的内容迁移过来了。</p>
+<p>这里只简单记录一些 Hexo 写文章和发布的命令，配置以及其他教程可以 Google 或者访问 Hexo 的<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">文档</a></p>
+<h2 id="前置工作"><a href="#前置工作" class="headerlink" title="前置工作"></a>前置工作</h2><p>关联 Hexo 和 GitHub 之前在 Github 添加ssh</p>
+<p>在 Git Bash 执行命令：</p>
+<p><code>ssh-keygen</code></p>
+<p>生成文件 id_rsa.pub ，将文件内容添加到 GitHub 帐号，执行命令：</p>
+<p><code>ssh -T git@github.com</code></p>
+<p>检测是否联通。</p>
+<h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><p>新建文章命令：</p>
+<p><code>$ hexo new [layout] &lt;title&gt;</code></p>
+<p>例如：</p>
+<p><code>$ hexo new &quot;Hello World.md&quot;</code></p>
+<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>Hexo 提供了快速方便的一键发布功能，只需一条命令就能将网站部署到服务器上。</p>
+<p><code>$ hexo generate --deploy</code></p>
+<p>不过在开始之前，需要先安装hexo-deployer-git：</p>
+<p><code>$ npm install hexo-deployer-git --save</code></p>
+<p>同时在 <code>_config.yml</code> 中修改配置：</p>
+<pre><code>deploy:
+    type: git
+    repo: &lt;repository url&gt; #库（Repository）地址
+    branch: [branch] #可空缺，GitHub 可自动检测
+    message: [message] #可空缺，自定义提交信息
+</code></pre><h2 id="可能遇到的错误"><a href="#可能遇到的错误" class="headerlink" title="可能遇到的错误"></a>可能遇到的错误</h2><p>当新完成一篇md文章时我们可能会发现不能生成静态网页了，可能是因为文章中使用了一些非法字符。</p>
+<p>例如该<a href="https://github.com/hexojs/hexo/issues/1228" target="_blank" rel="external">情况</a>。</p>
+<p>所以，md格式的编写需要留意符号的使用。</p>
+<p>以上。</p>
+<p>2016-1-26</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/26/2016-01-26-迁移Blog到Hexo/" data-id="ciq7qlh000003toc64c4fu6jx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/22/2015-11-07-Markdown使用指南/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Markdown 使用指南
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tool/">tool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/github/" style="font-size: 16.67px;">github</a> <a href="/tags/tool/" style="font-size: 20px;">tool</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/">中兴捧月2016软件编程初赛解题报告</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/12/2016-06-12-简单总结基础算法的思想/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/22/2015-11-13-Shadowsocks安装与配置/">Shadowsocks 安装与配置</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/22/2015-11-10-Jekyll安装与使用/">Jekyll 安装与使用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/22/2015-11-10-GitHub安装与使用/">GitHub 安装与使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

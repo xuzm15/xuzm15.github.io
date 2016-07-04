@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#简单总结基础算法的思想
+##Prim在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。
+##Spfa以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首个结点，经过该点松弛dist【v】，如果松弛成功，则将成功的点加入队列，重复该过程直至队列为空">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2016/06/12/2016-06-12-简单总结基础算法的思想/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#简单总结基础算法的思想
+##Prim在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。
+##Spfa以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首个结点，经过该点松弛dist【v】，如果松弛成功，则将成功的点加入队列，重复该过程直至队列为空">
+<meta property="og:updated_time" content="2016-07-04T07:12:59.641Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="#简单总结基础算法的思想
+##Prim在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。
+##Spfa以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首个结点，经过该点松弛dist【v】，如果松弛成功，则将成功的点加入队列，重复该过程直至队列为空">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2016-06-12-简单总结基础算法的思想" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/12/2016-06-12-简单总结基础算法的思想/" class="article-date">
+  <time datetime="2016-06-12T07:14:27.565Z" itemprop="datePublished">2016-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#简单总结基础算法的思想</p>
+<p>##Prim<br>在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。</p>
+<p>##Spfa<br>以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首个结点，经过该点松弛dist【v】，如果松弛成功，则将成功的点加入队列，重复该过程直至队列为空。</p>
+<p>##QuickSort<br>选择位于中间数值作为判断标准，从两端开始将大于/小于该值的数值进行交换，直到不能进行为止，这保证了排序后的结果是以中间数值为标准左小右大的。之后从最左端到当前位置，从当前位置到最右端递归该过程</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/12/2016-06-12-简单总结基础算法的思想/" data-id="ciq7qlh1y000ltoc68vpdkbx8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          中兴捧月2016软件编程初赛解题报告
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/22/2015-11-13-Shadowsocks安装与配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Shadowsocks 安装与配置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tool/">tool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/github/" style="font-size: 16.67px;">github</a> <a href="/tags/tool/" style="font-size: 20px;">tool</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/">中兴捧月2016软件编程初赛解题报告</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/12/2016-06-12-简单总结基础算法的思想/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/22/2015-11-13-Shadowsocks安装与配置/">Shadowsocks 安装与配置</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/22/2015-11-10-Jekyll安装与使用/">Jekyll 安装与使用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/22/2015-11-10-GitHub安装与使用/">GitHub 安装与使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
