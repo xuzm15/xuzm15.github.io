@@ -51,9 +51,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -67,7 +67,7 @@
     <article id="post-2016-06-16-中兴捧月2016软件编程竞赛" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/" class="article-date">
-  <time datetime="2016-06-16T12:50:22.000Z" itemprop="datePublished">2016-06-16</time>
+  <time datetime="2016-06-15T16:00:00.000Z" itemprop="datePublished">2016-06-16</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/">中兴捧月2016软件编程初赛解题报告</a>
+      <a class="article-title" href="/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/">中兴捧月2016软件编程竞赛</a>
     </h1>
   
 
@@ -107,7 +107,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/" data-id="ciq7r67ml000e4cc6djux53pj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/" data-id="ciq7r67ml000e4cc6djux53pj" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -120,37 +120,7 @@
     <article id="post-2016-06-12-简单总结基础算法的思想" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/06/12/2016-06-12-简单总结基础算法的思想/" class="article-date">
-  <time datetime="2016-06-12T07:14:27.565Z" itemprop="datePublished">2016-06-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#简单总结基础算法的思想</p>
-<p>##Prim<br>在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。</p>
-<p>##Spfa<br>以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首个结点，经过该点松弛dist【v】，如果松弛成功，则将成功的点加入队列，重复该过程直至队列为空。</p>
-<p>##QuickSort<br>选择位于中间数值作为判断标准，从两端开始将大于/小于该值的数值进行交换，直到不能进行为止，这保证了排序后的结果是以中间数值为标准左小右大的。之后从最左端到当前位置，从当前位置到最右端递归该过程</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/12/2016-06-12-简单总结基础算法的思想/" data-id="ciq7r67mg000c4cc69w1ayqye" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2015-11-13-Shadowsocks安装与配置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/22/2015-11-13-Shadowsocks安装与配置/" class="article-date">
-  <time datetime="2016-03-22T14:51:11.241Z" itemprop="datePublished">2016-03-22</time>
+  <time datetime="2016-06-11T16:00:00.000Z" itemprop="datePublished">2016-06-12</time>
 </a>
     
   </div>
@@ -161,7 +131,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/2015-11-13-Shadowsocks安装与配置/">Shadowsocks 安装与配置</a>
+      <a class="article-title" href="/2016/06/12/2016-06-12-简单总结基础算法的思想/">简单总结基础算法的思想</a>
     </h1>
   
 
@@ -169,327 +139,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Windows 7：可以直接在购买 Shadowsocks 的网站下载 Win 7 对应版本的客户端，该客户端提供了全局模式和 PAC 模式，不需要额外的浏览器插件设置代理。</p>
-<p>Ubuntu 15.10：运行代码：</p>
-<p><code>sudo apt-get install shadowsocks</code></p>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>Windows 7： Shadowsocks 的 Win 客户端很简明易懂，最后选择PAC模式，即自动切换代理模式即可，在这里不多介绍。</p>
-<p>Ubuntu 15.10：配置文件，切换到 /etc/shadowsocks/ 目录下：</p>
-<p><code>sudo gedit /etc/shadowsocks/config.json</code></p>
-<p>根据购买的账号修改各项参数：</p>
-<ul>
-<li><p>server 服务器 IP (IPv4/IPv6)，注意这也将是服务端监听的 IP 地址</p>
-</li>
-<li><p>server_port 服务器端口</p>
-</li>
-<li><p>local_port 本地端端口</p>
-</li>
-<li><p>password 用来加密的密码</p>
-</li>
-<li><p>timeout 超时时间（秒）</p>
-</li>
-<li><p>method 加密方法，可选择“bf-cfb”,“aes-256-cfb”,“des-cfb”,“rc4”,等等。默认是一种不安全的加密，推荐用“aes-256-cfb”</p>
-</li>
-</ul>
-<p>保存退出，运行：</p>
-<p><code>sudo sslocal –c /etc/shadowsocks/config.json</code></p>
-<p>至此，命令行配置完成， 在浏览器设置好代理配置即可， FireFox 代理插件推荐 Pan ，还可以提供广告的过滤功能。</p>
-<h2 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h2><p>切换到 /etc/shadowsocks/ 目录下：</p>
-<p><code>nohup sslocal –c /etc/shadowsocks/coig.json &amp;</code></p>
-<p>2015-11-13</p>
+        <p>最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。</p>
+<h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><h2 id="Prim"><a href="#Prim" class="headerlink" title="Prim"></a>Prim</h2><p>在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。</p>
+<h1 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h1><h2 id="Spfa"><a href="#Spfa" class="headerlink" title="Spfa"></a>Spfa</h2><p>以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首个结点，经过该点松弛dist【v】，如果松弛成功，则将成功的点加入队列，重复该过程直至队列为空。</p>
+<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="QuickSort"><a href="#QuickSort" class="headerlink" title="QuickSort"></a>QuickSort</h2><p>选择位于中间数值作为判断标准，从两端开始将大于/小于该值的数值进行交换，直到不能进行为止，这保证了排序后的结果是以中间数值为标准左小右大的。之后从最左端到当前位置，从当前位置到最右端递归该过程。</p>
+<p>未完待续。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/2015-11-13-Shadowsocks安装与配置/" data-id="ciq7r67m000084cc6xwuhei8u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/12/2016-06-12-简单总结基础算法的思想/" data-id="ciq7r67mg000c4cc69w1ayqye" class="article-share-link">Partager</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2015-11-10-Jekyll安装与使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/22/2015-11-10-Jekyll安装与使用/" class="article-date">
-  <time datetime="2016-03-22T14:51:11.240Z" itemprop="datePublished">2016-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/2015-11-10-Jekyll安装与使用/">Jekyll 安装与使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装-Ruby"><a href="#安装-Ruby" class="headerlink" title="安装 Ruby"></a>安装 Ruby</h2><p><code>sudo apt-get install ruby ruby-dev</code></p>
-<h2 id="更换Gem-sources"><a href="#更换Gem-sources" class="headerlink" title="更换Gem sources"></a>更换Gem sources</h2><p><code>sudo gem sources –remove https://rubygems.org/</code></p>
-<p><code>sudo gem sources –remove http://rubygems.org/</code></p>
-<p><code>sudo gem sources -a http://ruby.taobao.org/</code></p>
-<p><code>sudo gem sources -l</code></p>
-<p>如果替换成功，则会看到如下返回：</p>
-<p>1 *** CURRENT SOURCES <em>*</em></p>
-<p>2</p>
-<p>3 <a href="http://ruby.taobao.org" target="_blank" rel="external">http://ruby.taobao.org</a></p>
-<h2 id="安装-Jekyll-和-markdown-支持"><a href="#安装-Jekyll-和-markdown-支持" class="headerlink" title="安装 Jekyll 和 markdown 支持"></a>安装 Jekyll 和 markdown 支持</h2><p><code>sudo gem install jekyll</code></p>
-<p><code>sudo gem install rdiscount</code></p>
-<h2 id="jekyll运行"><a href="#jekyll运行" class="headerlink" title="jekyll运行"></a>jekyll运行</h2><p>切换到程序所在目录，运行：</p>
-<p><code>jekyll server</code></p>
-<p>2015-11-10</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/2015-11-10-Jekyll安装与使用/" data-id="ciq7r67lt00064cc6shbrapdz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2015-11-10-GitHub安装与使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/22/2015-11-10-GitHub安装与使用/" class="article-date">
-  <time datetime="2016-03-22T14:51:11.213Z" itemprop="datePublished">2016-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/2015-11-10-GitHub安装与使用/">GitHub 安装与使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="平台"><a href="#平台" class="headerlink" title="平台"></a>平台</h2><p>Ubuntu 15.10</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>sudo apt-get install git</code></p>
-<p><code>sudo apt-get install git-core</code></p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="生成ssh"><a href="#生成ssh" class="headerlink" title="生成ssh"></a>生成ssh</h3><p><code>ssh-keygen -C &quot;email&quot; -t rsa</code></p>
-<p>登陆GitHub，记录ssh，检查结果。</p>
-<p><code>ssh -v git@github.com</code></p>
-<h3 id="Clone"><a href="#Clone" class="headerlink" title="Clone"></a>Clone</h3><p><code>git clone https://……</code></p>
-<h3 id="提交commit"><a href="#提交commit" class="headerlink" title="提交commit"></a>提交commit</h3><p><code>git add .</code>                //往暂存区域添加已添加和修改的文件，不处理删除的文件</p>
-<p><code>git status</code>                //比较本地数据目录与暂存区域的变化</p>
-<p><code>git commit -m &quot;commit directions&quot;</code>    //提到代码到本地数据目录，并添加提交说明</p>
-<p><code>git push</code>            //提交git</p>
-<p>2015-11-10</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/2015-11-10-GitHub安装与使用/" data-id="ciq7r67ln00044cc6jkprrza9" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2015-11-07-Vim使用指南" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/22/2015-11-07-Vim使用指南/" class="article-date">
-  <time datetime="2016-03-22T14:51:11.187Z" itemprop="datePublished">2016-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/2015-11-07-Vim使用指南/">Vim 使用指南</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>OS: Ubuntu</p>
-<p>安装： sudo apt-get install vim-gtk</p>
-<p>配置： sudo vim /etc/vim/vimrc</p>
-<p>在最后一行开始输入：</p>
-<p>set nu                // 在左侧行号</p>
-<p>set tabstop=4            //tab 长度设置为 4</p>
-<p>set nobackup            //覆盖文件时不备份</p>
-<p>set cursorline            //突出显示当前行</p>
-<p>set ruler            //在右下角显示光标位置的状态行</p>
-<p>set autoindent            //自动缩进</p>
-<h2 id="Insert-模式"><a href="#Insert-模式" class="headerlink" title="Insert 模式"></a>Insert 模式</h2><p>按下 i 键进入 Insert 模式，在 Insert 模式中，可以进行文字的编辑。</p>
-<p>按下 Esc 键返回 Normal 模式。</p>
-<h2 id="Normal-模式"><a href="#Normal-模式" class="headerlink" title="Normal 模式"></a>Normal 模式</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ul>
-<li>x 删当前光标所在的个字符。</li>
-<li>:wq 存盘 + 退出(:w 存盘, :q 退出)。</li>
-<li>dd 删除当前行，并把删除的行存到剪贴板里。</li>
-<li>p 粘贴剪贴板到当前行的下一行</li>
-</ul>
-<h3 id="进阶操作"><a href="#进阶操作" class="headerlink" title="进阶操作"></a>进阶操作</h3><p>以后学会了慢慢补充</p>
-<p>2015-11-07</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/2015-11-07-Vim使用指南/" data-id="ciq7r67l900014cc6ww4xxyzx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2015-11-07-Ubuntu开机引导项修改" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/22/2015-11-07-Ubuntu开机引导项修改/" class="article-date">
-  <time datetime="2016-03-22T14:51:11.163Z" itemprop="datePublished">2016-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/2015-11-07-Ubuntu开机引导项修改/">Ubuntu 开机引导项修改</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在安装好 Win 和 Ubuntu 双系统后，有时我们会发现，开一次机需要经历 Win 和 Ubuntu 的两次开机引导，浪费了许多开机时间。</p>
-<p>本文的目的在于消灭 Ubuntu 的开机引导，只保留 Win 的开机引导。理由是多年间习惯了 Win 的开机引导样式。任性。:-D</p>
-<h2 id="平台版本"><a href="#平台版本" class="headerlink" title="平台版本"></a>平台版本</h2><p>Windows 7 x64 ultimate</p>
-<p>Ubuntu 15.10</p>
-<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><p>在 Ubuntu 终端执行命令：</p>
-<p><code>sudo gedit /etc/default/grub</code></p>
-<p>kylin：</p>
-<p>将找到的三个<code>GRUB_TIMEOUT=10</code>中的else上下的两个改为<code>GRUB_TIMEOUT=0.1</code>，注意不可改为0。</p>
-<p>原版：</p>
-<p>仅有一个<code>GRUB_TIMEOUT=10</code>可供修改。</p>
-<p>保存退出，执行命令：</p>
-<p><code>sudo update-grub</code></p>
-<p>这样就可以略过 Ubuntu 的开机引导了。</p>
-<p>2015-11-07</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/2015-11-07-Ubuntu开机引导项修改/" data-id="ciq7r67lk00034cc6g4032l1m" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2015-11-07-Markdown使用指南" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/22/2015-11-07-Markdown使用指南/" class="article-date">
-  <time datetime="2016-03-22T14:51:11.161Z" itemprop="datePublished">2016-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/2015-11-07-Markdown使用指南/">Markdown 使用指南</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>在 Markdown 中，如果一段文字被定义为标题，只要在这段文字前加 # 号即可。</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p>以此类推，总共六级标题，建议在井号后加一个空格，这是最标准的 Markdown 语法。</p>
-<p>另外，如果要在第一个字符打出 # 本身这个符号，在其前面加一个空格即可。</p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>加 * 即可变为无序列表，加 1. 2. 3. 可变为有序列表。</p>
-<p>符号要和文字之间加上一个字符的空格。</p>
-<ul>
-<li>a</li>
-<li>b</li>
-<li>c</li>
-</ul>
-<p>两个列表不能相邻。 </p>
-<ol>
-<li>a</li>
-<li>b</li>
-<li>c</li>
-</ol>
-<p>在需要被嵌套的列表第一个符号前加空格可以实现嵌套。</p>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>引用格式。</p>
-<blockquote>
-<p>Example</p>
-</blockquote>
-<p>在文本前加入 &gt; 这种尖括号即可。</p>
-<h2 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h2><p>插入链接与插入图片的语法类似，区别是图片的话需要在最前面加入一个 ! 号。</p>
-<p>[name](url)</p>
-<h2 id="粗体与斜体"><a href="#粗体与斜体" class="headerlink" title="粗体与斜体"></a>粗体与斜体</h2><p>用一对 * 号括起来的部分是可以转换成加斜/加粗的。</p>
-<p>一对表示加斜，两对表示加粗，三对表示加斜加粗。</p>
-<h2 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a>代码框</h2><p>一对 ` 可以实现代码框的功能。</p>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>三个星号 <em>*</em> 可以添加一道分割线。</p>
-<h2 id="创建链接"><a href="#创建链接" class="headerlink" title="创建链接"></a>创建链接</h2><p>&lt;&gt;</p>
-<p>为输入的URL或邮箱自动创建链接，如<a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#116;&#101;&#115;&#x74;&#x40;&#101;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;">&#116;&#101;&#115;&#x74;&#x40;&#101;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;</a>。</p>
-<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><p>转义字符 \ 在 Markdown 里是生效的。</p>
-<h2 id="使用平台"><a href="#使用平台" class="headerlink" title="使用平台"></a>使用平台</h2><p>Windows: MarkdownPad 2</p>
-<p>Linux： Ubuntu ？</p>
-<h1 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h1><p>基本功能介绍完毕，其他功能以后视需要进行补充。</p>
-<p>2015-11-07</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/2015-11-07-Markdown使用指南/" data-id="ciq7r67ky00004cc6jnfizy22" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
-
     </footer>
   </div>
   
@@ -519,19 +180,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这学期开始有个想法是在 GitHub 上搭一个自己的博客，一开始的想法是使用 Jekyll ，后来由于要做其他项目于是只做了简单的文章发布功能，同时界面实在谈不上好看。临近过年，终于稍微清闲一些，偶然发觉 Hexo 更容易上手并且效果不错，于是就把博客的内容迁移过来了。</p>
-<p>这里只简单记录一些 Hexo 写文章和发布的命令，配置以及其他教程可以 Google 或者访问 Hexo 的<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">文档</a></p>
-<h2 id="前置工作"><a href="#前置工作" class="headerlink" title="前置工作"></a>前置工作</h2><p>关联 Hexo 和 GitHub 之前在 Github 添加ssh</p>
-<p>在 Git Bash 执行命令：</p>
+        <p>这学期开始有个想法是在GitHub上搭一个自己的博客，一开始的想法是使用Jekyll，后来由于要做其他项目于是只做了简单的文章发布功能，同时界面实在谈不上好看。临近过年，终于稍微清闲一些，偶然发觉Hexo更容易上手并且效果不错，于是就把博客的内容迁移过来了。</p>
+<p>这里只简单记录一些Hexo写文章和发布的命令，配置以及其他教程可以Google或者访问Hexo的<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">文档</a></p>
+<h2 id="前置工作"><a href="#前置工作" class="headerlink" title="前置工作"></a>前置工作</h2><p>关联Hexo和GitHub之前需要在Github添加ssh</p>
+<p>在Git Bash执行命令：</p>
 <p><code>ssh-keygen</code></p>
-<p>生成文件 id_rsa.pub ，将文件内容添加到 GitHub 帐号，执行命令：</p>
+<p>生成文件id_rsa.pub，将文件内容添加到GitHub帐号，执行命令：</p>
 <p><code>ssh -T git@github.com</code></p>
 <p>检测是否联通。</p>
+<p>并且执行命令：</p>
+<p><code>$ git config --global user.name &quot;yourname&quot;</code><br><code>$ git config --global user.email  &quot;youremail@email.com&quot;</code></p>
+<p>写明自己身份。</p>
 <h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><p>新建文章命令：</p>
 <p><code>$ hexo new [layout] &lt;title&gt;</code></p>
 <p>例如：</p>
 <p><code>$ hexo new &quot;Hello World.md&quot;</code></p>
-<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>Hexo 提供了快速方便的一键发布功能，只需一条命令就能将网站部署到服务器上。</p>
+<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>Hexo提供了快速方便的一键发布功能，只需一条命令就能将网站部署到服务器上。</p>
 <p><code>$ hexo generate --deploy</code></p>
 <p>不过在开始之前，需要先安装hexo-deployer-git：</p>
 <p><code>$ npm install hexo-deployer-git --save</code></p>
@@ -550,11 +214,353 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/26/2016-01-26-迁移Blog到Hexo/" data-id="ciq7r67m4000a4cc6jrhyb354" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/26/2016-01-26-迁移Blog到Hexo/" data-id="ciq7r67m4000a4cc6jrhyb354" class="article-share-link">Partager</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
+    </footer>
+  </div>
+  
+</article>
 
+
+  
+    <article id="post-2015-11-13-Shadowsocks使用指南" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/13/2015-11-13-Shadowsocks使用指南/" class="article-date">
+  <time datetime="2015-11-12T16:00:00.000Z" itemprop="datePublished">2015-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/13/2015-11-13-Shadowsocks使用指南/">Shadowsocks使用指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Shadowsocks是我比较喜欢的一套win下科学上网方式，客户端很简洁，节点也比较稳定，这里记录了在win下和Ubuntu下的Shadowsocks使用方式。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Windows7：可以直接在购买Shadowsocks的网站下载Win7对应版本的客户端，该客户端提供了全局模式和PAC模式，不需要额外的浏览器插件设置代理。</p>
+<p>Ubuntu 15.10：运行代码：</p>
+<p><code>sudo apt-get install shadowsocks</code></p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>Windows7：Shadowsocks的Win客户端很简明易懂，最后选择PAC模式，即自动切换代理模式即可，在这里不多介绍。</p>
+<p>Ubuntu 15.10：配置文件，切换到/etc/shadowsocks/目录下：</p>
+<p><code>sudo gedit /etc/shadowsocks/config.json</code></p>
+<p>根据购买的账号修改各项参数：</p>
+<ul>
+<li><p>server服务器IP(IPv4/IPv6)，注意这也将是服务端监听的IP地址</p>
+</li>
+<li><p>server_port服务器端口</p>
+</li>
+<li><p>local_port本地端端口</p>
+</li>
+<li><p>password用来加密的密码</p>
+</li>
+<li><p>timeout超时时间（秒）</p>
+</li>
+<li><p>method加密方法，可选择“bf-cfb”,“aes-256-cfb”,“des-cfb”,“rc4”,等等。默认是一种不安全的加密，推荐用“aes-256-cfb”。</p>
+</li>
+</ul>
+<p>保存退出，运行：</p>
+<p><code>sudo sslocal –c /etc/shadowsocks/config.json</code></p>
+<p>至此，命令行配置完成，在浏览器设置好代理配置即可，FireFox 代理插件推荐Pan，还可以提供广告的过滤功能。</p>
+<h2 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h2><p>切换到/etc/shadowsocks/目录下：</p>
+<p><code>nohup sslocal –c /etc/shadowsocks/coig.json &amp;</code></p>
+<p>2015-11-13</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/13/2015-11-13-Shadowsocks使用指南/" data-id="ciq800c7q0003jsc6wanwzk45" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-11-10-GitHub使用指南" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/10/2015-11-10-GitHub使用指南/" class="article-date">
+  <time datetime="2015-11-09T16:00:00.000Z" itemprop="datePublished">2015-11-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/10/2015-11-10-GitHub使用指南/">GitHub使用指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是一份不完备的Ubuntu下使用Github的指南。</p>
+<h2 id="平台"><a href="#平台" class="headerlink" title="平台"></a>平台</h2><p>Ubuntu 15.10</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>sudo apt-get install git</code></p>
+<p><code>sudo apt-get install git-core</code></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="生成ssh"><a href="#生成ssh" class="headerlink" title="生成ssh"></a>生成ssh</h3><p><code>ssh-keygen -C &quot;email&quot; -t rsa</code></p>
+<p>登陆GitHub，记录ssh，检查结果。</p>
+<p><code>ssh -v git@github.com</code></p>
+<p>这里还需要绑定一下自己的账号。</p>
+<h3 id="Clone"><a href="#Clone" class="headerlink" title="Clone"></a>Clone</h3><p><code>git clone https://……</code></p>
+<h3 id="提交commit"><a href="#提交commit" class="headerlink" title="提交commit"></a>提交commit</h3><p><code>git add .</code> //往暂存区域添加已添加和修改的文件，不处理删除的文件</p>
+<p><code>git status</code> //比较本地数据目录与暂存区域的变化</p>
+<p><code>git commit -m &quot;commit directions&quot;</code>    //提到代码到本地数据目录，并添加提交说明</p>
+<p><code>git push</code> //提交git</p>
+<p>2015-11-10</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/10/2015-11-10-GitHub使用指南/" data-id="ciq800c760000jsc6o6x5b3fz" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-11-10-Jekyll使用指南" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/10/2015-11-10-Jekyll使用指南/" class="article-date">
+  <time datetime="2015-11-09T16:00:00.000Z" itemprop="datePublished">2015-11-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/10/2015-11-10-Jekyll使用指南/">Jekyll使用指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在最初搭建Github上的Blog时，我尝试了使用官方推荐的Jekyll，这是当时的一些操作。</p>
+<h2 id="安装Ruby"><a href="#安装Ruby" class="headerlink" title="安装Ruby"></a>安装Ruby</h2><p><code>sudo apt-get install ruby ruby-dev</code></p>
+<h2 id="更换Gem-sources"><a href="#更换Gem-sources" class="headerlink" title="更换Gem sources"></a>更换Gem sources</h2><p><code>sudo gem sources –remove https://rubygems.org/</code></p>
+<p><code>sudo gem sources –remove http://rubygems.org/</code></p>
+<p><code>sudo gem sources -a http://ruby.taobao.org/</code></p>
+<p><code>sudo gem sources -l</code></p>
+<p>如果替换成功，则会看到如下返回：</p>
+<p>1 *** CURRENT SOURCES <em>*</em></p>
+<p>2</p>
+<p>3 <a href="http://ruby.taobao.org" target="_blank" rel="external">http://ruby.taobao.org</a></p>
+<h2 id="安装Jekyll和markdown支持"><a href="#安装Jekyll和markdown支持" class="headerlink" title="安装Jekyll和markdown支持"></a>安装Jekyll和markdown支持</h2><p><code>sudo gem install jekyll</code></p>
+<p><code>sudo gem install rdiscount</code></p>
+<h2 id="jekyll运行"><a href="#jekyll运行" class="headerlink" title="jekyll运行"></a>jekyll运行</h2><p>切换到程序所在目录，运行：</p>
+<p><code>jekyll server</code></p>
+<p>2015-11-10</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/10/2015-11-10-Jekyll使用指南/" data-id="ciq800c7n0002jsc60r9qce5y" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-11-07-Markdown使用指南" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/07/2015-11-07-Markdown使用指南/" class="article-date">
+  <time datetime="2015-11-06T16:00:00.000Z" itemprop="datePublished">2015-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/07/2015-11-07-Markdown使用指南/">Markdown使用指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这几天了解到一门很漂亮的文字写作格式，叫做Markdown。不过写文字和代码是方便了，但是对数学公式的支持好像并不好。这里简单记录一下Markdown的使用方法。</p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>在Markdown中，如果一段文字被定义为标题，只要在这段文字前加 # 号和空格即可。</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p>以此类推，总共六级标题。</p>
+<p>另外，如果要在第一个字符打出 # 本身这个符号，在其前面加一个空格即可。</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>加 * 即可变为无序列表，加 1. 2. 3. 可变为有序列表。</p>
+<p>符号要和文字之间加上一个字符的空格。</p>
+<ul>
+<li>a</li>
+<li>b</li>
+<li>c</li>
+</ul>
+<p>两个列表不能相邻。 </p>
+<ol>
+<li>a</li>
+<li>b</li>
+<li>c</li>
+</ol>
+<p>在需要被嵌套的列表第一个符号前加空格可以实现嵌套。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>引用格式。</p>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<p>在文本前加入 &gt; 这种尖括号即可。</p>
+<h2 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h2><p>插入链接与插入图片的语法类似，区别是图片的话需要在最前面加入一个 ! 号。</p>
+<p>[name](url)</p>
+<h2 id="粗体与斜体"><a href="#粗体与斜体" class="headerlink" title="粗体与斜体"></a>粗体与斜体</h2><p>用一对 * 号括起来的部分是可以转换成加斜/加粗的。</p>
+<p>一对表示加斜，两对表示加粗，三对表示加斜加粗。</p>
+<h2 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a>代码框</h2><p>一对 ` 可以实现代码框的功能。</p>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>三个星号 <em>*</em> 可以添加一道分割线。</p>
+<h2 id="创建链接"><a href="#创建链接" class="headerlink" title="创建链接"></a>创建链接</h2><p>&lt;&gt;</p>
+<p>为输入的URL或邮箱自动创建链接，如<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#116;&#x65;&#115;&#x74;&#x40;&#101;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#109;">&#116;&#x65;&#115;&#x74;&#x40;&#101;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#109;</a>。</p>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><p>转义字符 \ 在Markdown里是生效的。</p>
+<h2 id="使用平台"><a href="#使用平台" class="headerlink" title="使用平台"></a>使用平台</h2><p>Windows: MarkdownPad2</p>
+<p>Linux： Ubuntu</p>
+<h1 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h1><p>基本功能就是这些了，其他功能以后会视需要进行补充。</p>
+<p>2015-11-07</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/07/2015-11-07-Markdown使用指南/" data-id="ciq7r67ky00004cc6jnfizy22" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-11-07-Vim使用指南" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/07/2015-11-07-Vim使用指南/" class="article-date">
+  <time datetime="2015-11-06T16:00:00.000Z" itemprop="datePublished">2015-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/07/2015-11-07-Vim使用指南/">Vim使用指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>为了向高端Emacs党和Vim党看齐，了解了一下Vim，作为初学者记录了一些简单的用法。</p>
+<p>OS: Ubuntu</p>
+<p>安装： sudo apt-get install vim-gtk</p>
+<p>配置： sudo vim /etc/vim/vimrc</p>
+<p>在最后一行开始输入：</p>
+<p>set nu // 在左侧行号</p>
+<p>set tabstop=4 //tab 长度设置为 4</p>
+<p>set nobackup //覆盖文件时不备份</p>
+<p>set cursorline //突出显示当前行</p>
+<p>set ruler //在右下角显示光标位置的状态行</p>
+<p>set autoindent //自动缩进</p>
+<h2 id="Insert模式"><a href="#Insert模式" class="headerlink" title="Insert模式"></a>Insert模式</h2><p>按下 i 键进入Insert模式，在Insert模式中，可以进行文字的编辑。</p>
+<p>按下Esc键返回Normal模式。</p>
+<h2 id="Normal模式"><a href="#Normal模式" class="headerlink" title="Normal模式"></a>Normal模式</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ul>
+<li>x 删当前光标所在的个字符。</li>
+<li>:wq 存盘 + 退出(:w 存盘, :q 退出)。</li>
+<li>dd 删除当前行，并把删除的行存到剪贴板里。</li>
+<li>p 粘贴剪贴板到当前行的下一行</li>
+</ul>
+<h3 id="进阶操作"><a href="#进阶操作" class="headerlink" title="进阶操作"></a>进阶操作</h3><p>以后学会了慢慢补充。</p>
+<p>2015-11-07</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/07/2015-11-07-Vim使用指南/" data-id="ciq7r67l900014cc6ww4xxyzx" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-11-07-修改Ubuntu开机引导项" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/07/2015-11-07-修改Ubuntu开机引导项/" class="article-date">
+  <time datetime="2015-11-06T16:00:00.000Z" itemprop="datePublished">2015-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/07/2015-11-07-修改Ubuntu开机引导项/">修改Ubuntu开机引导项</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在安装好Win和Ubuntu双系统后，有时我们会发现，开一次机需要经历Win和Ubuntu的两次开机引导，浪费了许多开机时间。</p>
+<p>本文的目的在于消灭Ubuntu的开机引导，只保留Win的开机引导。理由是多年间习惯了Win的开机引导样式。就是这么任性。:-D</p>
+<h2 id="平台版本"><a href="#平台版本" class="headerlink" title="平台版本"></a>平台版本</h2><p>Windows7 x64 ultimate</p>
+<p>Ubuntu 15.10</p>
+<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><p>在Ubuntu终端执行命令：</p>
+<p><code>sudo gedit /etc/default/grub</code></p>
+<p>kylin：</p>
+<p>将找到的三个<code>GRUB_TIMEOUT=10</code>中的else上下的两个改为<code>GRUB_TIMEOUT=0.1</code>，注意不可改为0。</p>
+<p>原版：</p>
+<p>仅有一个<code>GRUB_TIMEOUT=10</code>可供修改。</p>
+<p>保存退出，执行命令：</p>
+<p><code>sudo update-grub</code></p>
+<p>这样就可以略过 Ubuntu 的开机引导了。</p>
+<p>2015-11-07</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/07/2015-11-07-修改Ubuntu开机引导项/" data-id="ciq800c7h0001jsc692ysuofu" class="article-share-link">Partager</a>
+      
+      
     </footer>
   </div>
   
@@ -572,9 +578,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tool/">tool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+      <ul class="tag-list"></ul>
     </div>
   </div>
 
@@ -582,9 +588,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/github/" style="font-size: 16.67px;">github</a> <a href="/tags/tool/" style="font-size: 20px;">tool</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a>
+      
     </div>
   </div>
 
@@ -593,7 +599,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li></ul>
     </div>
   </div>
 
@@ -601,28 +607,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/">中兴捧月2016软件编程初赛解题报告</a>
+            <a href="/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/">中兴捧月2016软件编程竞赛</a>
           </li>
         
           <li>
-            <a href="/2016/06/12/2016-06-12-简单总结基础算法的思想/">(no title)</a>
+            <a href="/2016/06/12/2016-06-12-简单总结基础算法的思想/">简单总结基础算法的思想</a>
           </li>
         
           <li>
-            <a href="/2016/03/22/2015-11-13-Shadowsocks安装与配置/">Shadowsocks 安装与配置</a>
+            <a href="/2016/01/26/2016-01-26-迁移Blog到Hexo/">迁移Blog到Hexo.md</a>
           </li>
         
           <li>
-            <a href="/2016/03/22/2015-11-10-Jekyll安装与使用/">Jekyll 安装与使用</a>
+            <a href="/2015/11/13/2015-11-13-Shadowsocks使用指南/">Shadowsocks使用指南</a>
           </li>
         
           <li>
-            <a href="/2016/03/22/2015-11-10-GitHub安装与使用/">GitHub 安装与使用</a>
+            <a href="/2015/11/10/2015-11-10-GitHub使用指南/">GitHub使用指南</a>
           </li>
         
       </ul>
@@ -638,7 +644,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

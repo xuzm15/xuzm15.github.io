@@ -3,18 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>GitHub 安装与使用 | Hexo</title>
+  <title>GitHub使用指南 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="初次使用 GitHub 的记录">
+  <meta name="description" content="这是一份不完备的Ubuntu下使用Github的指南。
+平台Ubuntu 15.10
+安装sudo apt-get install git
+sudo apt-get install git-core
+配置生成sshssh-keygen -C &amp;quot;email&amp;quot; -t rsa
+登陆GitHub，记录ssh，检查结果。
+ssh -v git@github.com
+这里还需要绑定一下自己">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub 安装与使用">
-<meta property="og:url" content="http://yoursite.com/2016/03/22/2015-11-10-GitHub安装与使用/index.html">
+<meta property="og:title" content="GitHub使用指南">
+<meta property="og:url" content="http://yoursite.com/2015/11/10/2015-11-10-GitHub使用指南/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="初次使用 GitHub 的记录">
-<meta property="og:updated_time" content="2016-02-23T08:33:42.146Z">
+<meta property="og:description" content="这是一份不完备的Ubuntu下使用Github的指南。
+平台Ubuntu 15.10
+安装sudo apt-get install git
+sudo apt-get install git-core
+配置生成sshssh-keygen -C &amp;quot;email&amp;quot; -t rsa
+登陆GitHub，记录ssh，检查结果。
+ssh -v git@github.com
+这里还需要绑定一下自己">
+<meta property="og:updated_time" content="2016-07-04T12:18:27.704Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GitHub 安装与使用">
-<meta name="twitter:description" content="初次使用 GitHub 的记录">
+<meta name="twitter:title" content="GitHub使用指南">
+<meta name="twitter:description" content="这是一份不完备的Ubuntu下使用Github的指南。
+平台Ubuntu 15.10
+安装sudo apt-get install git
+sudo apt-get install git-core
+配置生成sshssh-keygen -C &amp;quot;email&amp;quot; -t rsa
+登陆GitHub，记录ssh，检查结果。
+ssh -v git@github.com
+这里还需要绑定一下自己">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -52,9 +73,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -63,10 +84,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2015-11-10-GitHub安装与使用" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2015-11-10-GitHub使用指南" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/22/2015-11-10-GitHub安装与使用/" class="article-date">
-  <time datetime="2016-03-22T14:51:11.213Z" itemprop="datePublished">2016-03-22</time>
+    <a href="/2015/11/10/2015-11-10-GitHub使用指南/" class="article-date">
+  <time datetime="2015-11-09T16:00:00.000Z" itemprop="datePublished">2015-11-10</time>
 </a>
     
   </div>
@@ -77,7 +98,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      GitHub 安装与使用
+      GitHub使用指南
     </h1>
   
 
@@ -85,46 +106,46 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="平台"><a href="#平台" class="headerlink" title="平台"></a>平台</h2><p>Ubuntu 15.10</p>
+        <p>这是一份不完备的Ubuntu下使用Github的指南。</p>
+<h2 id="平台"><a href="#平台" class="headerlink" title="平台"></a>平台</h2><p>Ubuntu 15.10</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>sudo apt-get install git</code></p>
 <p><code>sudo apt-get install git-core</code></p>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="生成ssh"><a href="#生成ssh" class="headerlink" title="生成ssh"></a>生成ssh</h3><p><code>ssh-keygen -C &quot;email&quot; -t rsa</code></p>
 <p>登陆GitHub，记录ssh，检查结果。</p>
 <p><code>ssh -v git@github.com</code></p>
+<p>这里还需要绑定一下自己的账号。</p>
 <h3 id="Clone"><a href="#Clone" class="headerlink" title="Clone"></a>Clone</h3><p><code>git clone https://……</code></p>
-<h3 id="提交commit"><a href="#提交commit" class="headerlink" title="提交commit"></a>提交commit</h3><p><code>git add .</code>                //往暂存区域添加已添加和修改的文件，不处理删除的文件</p>
-<p><code>git status</code>                //比较本地数据目录与暂存区域的变化</p>
+<h3 id="提交commit"><a href="#提交commit" class="headerlink" title="提交commit"></a>提交commit</h3><p><code>git add .</code> //往暂存区域添加已添加和修改的文件，不处理删除的文件</p>
+<p><code>git status</code> //比较本地数据目录与暂存区域的变化</p>
 <p><code>git commit -m &quot;commit directions&quot;</code>    //提到代码到本地数据目录，并添加提交说明</p>
-<p><code>git push</code>            //提交git</p>
+<p><code>git push</code> //提交git</p>
 <p>2015-11-10</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/2015-11-10-GitHub安装与使用/" data-id="ciq7r67ln00044cc6jkprrza9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/10/2015-11-10-GitHub使用指南/" data-id="ciq800c760000jsc6o6x5b3fz" class="article-share-link">Partager</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2016/03/22/2015-11-10-Jekyll安装与使用/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+    <a href="/2015/11/13/2015-11-13-Shadowsocks使用指南/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
-          Jekyll 安装与使用
+          Shadowsocks使用指南
         
       </div>
     </a>
   
   
-    <a href="/2016/03/22/2015-11-07-Vim使用指南/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Vim 使用指南</div>
+    <a href="/2015/11/10/2015-11-10-Jekyll使用指南/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Jekyll使用指南</div>
     </a>
   
 </nav>
@@ -141,9 +162,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tool/">tool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+      <ul class="tag-list"></ul>
     </div>
   </div>
 
@@ -151,9 +172,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/github/" style="font-size: 16.67px;">github</a> <a href="/tags/tool/" style="font-size: 20px;">tool</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a>
+      
     </div>
   </div>
 
@@ -162,7 +183,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li></ul>
     </div>
   </div>
 
@@ -170,28 +191,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/">中兴捧月2016软件编程初赛解题报告</a>
+            <a href="/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/">中兴捧月2016软件编程竞赛</a>
           </li>
         
           <li>
-            <a href="/2016/06/12/2016-06-12-简单总结基础算法的思想/">(no title)</a>
+            <a href="/2016/06/12/2016-06-12-简单总结基础算法的思想/">简单总结基础算法的思想</a>
           </li>
         
           <li>
-            <a href="/2016/03/22/2015-11-13-Shadowsocks安装与配置/">Shadowsocks 安装与配置</a>
+            <a href="/2016/01/26/2016-01-26-迁移Blog到Hexo/">迁移Blog到Hexo.md</a>
           </li>
         
           <li>
-            <a href="/2016/03/22/2015-11-10-Jekyll安装与使用/">Jekyll 安装与使用</a>
+            <a href="/2015/11/13/2015-11-13-Shadowsocks使用指南/">Shadowsocks使用指南</a>
           </li>
         
           <li>
-            <a href="/2016/03/22/2015-11-10-GitHub安装与使用/">GitHub 安装与使用</a>
+            <a href="/2015/11/10/2015-11-10-GitHub使用指南/">GitHub使用指南</a>
           </li>
         
       </ul>
@@ -207,7 +228,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

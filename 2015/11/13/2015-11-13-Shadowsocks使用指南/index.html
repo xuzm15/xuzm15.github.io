@@ -3,24 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>简单总结基础算法的思想 | Hexo</title>
+  <title>Shadowsocks使用指南 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。
-最小生成树Prim在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。
-最短路径Spfa以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首">
+  <meta name="description" content="Shadowsocks是我比较喜欢的一套win下科学上网方式，客户端很简洁，节点也比较稳定，这里记录了在win下和Ubuntu下的Shadowsocks使用方式。
+安装Windows7：可以直接在购买Shadowsocks的网站下载Win7对应版本的客户端，该客户端提供了全局模式和PAC模式，不需要额外的浏览器插件设置代理。
+Ubuntu 15.10：运行代码：
+sudo apt-get inst">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单总结基础算法的思想">
-<meta property="og:url" content="http://yoursite.com/2016/06/12/2016-06-12-简单总结基础算法的思想/index.html">
+<meta property="og:title" content="Shadowsocks使用指南">
+<meta property="og:url" content="http://yoursite.com/2015/11/13/2015-11-13-Shadowsocks使用指南/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。
-最小生成树Prim在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。
-最短路径Spfa以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首">
-<meta property="og:updated_time" content="2016-07-04T08:25:40.622Z">
+<meta property="og:description" content="Shadowsocks是我比较喜欢的一套win下科学上网方式，客户端很简洁，节点也比较稳定，这里记录了在win下和Ubuntu下的Shadowsocks使用方式。
+安装Windows7：可以直接在购买Shadowsocks的网站下载Win7对应版本的客户端，该客户端提供了全局模式和PAC模式，不需要额外的浏览器插件设置代理。
+Ubuntu 15.10：运行代码：
+sudo apt-get inst">
+<meta property="og:updated_time" content="2016-07-04T12:20:52.166Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简单总结基础算法的思想">
-<meta name="twitter:description" content="最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。
-最小生成树Prim在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。
-最短路径Spfa以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首">
+<meta name="twitter:title" content="Shadowsocks使用指南">
+<meta name="twitter:description" content="Shadowsocks是我比较喜欢的一套win下科学上网方式，客户端很简洁，节点也比较稳定，这里记录了在win下和Ubuntu下的Shadowsocks使用方式。
+安装Windows7：可以直接在购买Shadowsocks的网站下载Win7对应版本的客户端，该客户端提供了全局模式和PAC模式，不需要额外的浏览器插件设置代理。
+Ubuntu 15.10：运行代码：
+sudo apt-get inst">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,10 +72,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016-06-12-简单总结基础算法的思想" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2015-11-13-Shadowsocks使用指南" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/12/2016-06-12-简单总结基础算法的思想/" class="article-date">
-  <time datetime="2016-06-11T16:00:00.000Z" itemprop="datePublished">2016-06-12</time>
+    <a href="/2015/11/13/2015-11-13-Shadowsocks使用指南/" class="article-date">
+  <time datetime="2015-11-12T16:00:00.000Z" itemprop="datePublished">2015-11-13</time>
 </a>
     
   </div>
@@ -83,7 +86,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      简单总结基础算法的思想
+      Shadowsocks使用指南
     </h1>
   
 
@@ -91,16 +94,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。</p>
-<h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><h2 id="Prim"><a href="#Prim" class="headerlink" title="Prim"></a>Prim</h2><p>在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。</p>
-<h1 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h1><h2 id="Spfa"><a href="#Spfa" class="headerlink" title="Spfa"></a>Spfa</h2><p>以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首个结点，经过该点松弛dist【v】，如果松弛成功，则将成功的点加入队列，重复该过程直至队列为空。</p>
-<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="QuickSort"><a href="#QuickSort" class="headerlink" title="QuickSort"></a>QuickSort</h2><p>选择位于中间数值作为判断标准，从两端开始将大于/小于该值的数值进行交换，直到不能进行为止，这保证了排序后的结果是以中间数值为标准左小右大的。之后从最左端到当前位置，从当前位置到最右端递归该过程。</p>
-<p>未完待续。</p>
+        <p>Shadowsocks是我比较喜欢的一套win下科学上网方式，客户端很简洁，节点也比较稳定，这里记录了在win下和Ubuntu下的Shadowsocks使用方式。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Windows7：可以直接在购买Shadowsocks的网站下载Win7对应版本的客户端，该客户端提供了全局模式和PAC模式，不需要额外的浏览器插件设置代理。</p>
+<p>Ubuntu 15.10：运行代码：</p>
+<p><code>sudo apt-get install shadowsocks</code></p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>Windows7：Shadowsocks的Win客户端很简明易懂，最后选择PAC模式，即自动切换代理模式即可，在这里不多介绍。</p>
+<p>Ubuntu 15.10：配置文件，切换到/etc/shadowsocks/目录下：</p>
+<p><code>sudo gedit /etc/shadowsocks/config.json</code></p>
+<p>根据购买的账号修改各项参数：</p>
+<ul>
+<li><p>server服务器IP(IPv4/IPv6)，注意这也将是服务端监听的IP地址</p>
+</li>
+<li><p>server_port服务器端口</p>
+</li>
+<li><p>local_port本地端端口</p>
+</li>
+<li><p>password用来加密的密码</p>
+</li>
+<li><p>timeout超时时间（秒）</p>
+</li>
+<li><p>method加密方法，可选择“bf-cfb”,“aes-256-cfb”,“des-cfb”,“rc4”,等等。默认是一种不安全的加密，推荐用“aes-256-cfb”。</p>
+</li>
+</ul>
+<p>保存退出，运行：</p>
+<p><code>sudo sslocal –c /etc/shadowsocks/config.json</code></p>
+<p>至此，命令行配置完成，在浏览器设置好代理配置即可，FireFox 代理插件推荐Pan，还可以提供广告的过滤功能。</p>
+<h2 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h2><p>切换到/etc/shadowsocks/目录下：</p>
+<p><code>nohup sslocal –c /etc/shadowsocks/coig.json &amp;</code></p>
+<p>2015-11-13</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/12/2016-06-12-简单总结基础算法的思想/" data-id="ciq7r67mg000c4cc69w1ayqye" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2015/11/13/2015-11-13-Shadowsocks使用指南/" data-id="ciq800c7q0003jsc6wanwzk45" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -109,19 +135,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/01/26/2016-01-26-迁移Blog到Hexo/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
-          中兴捧月2016软件编程竞赛
+          迁移Blog到Hexo.md
         
       </div>
     </a>
   
   
-    <a href="/2016/01/26/2016-01-26-迁移Blog到Hexo/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/11/10/2015-11-10-GitHub使用指南/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">迁移Blog到Hexo.md</div>
+      <div class="article-nav-title">GitHub使用指南</div>
     </a>
   
 </nav>
