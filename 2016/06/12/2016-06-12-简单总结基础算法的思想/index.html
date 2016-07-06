@@ -15,22 +15,16 @@
 
 
 
-<meta name="description" content="最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。
-最小生成树Prim在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。
-最短路径Spfa以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首">
+<meta name="description" content="最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单总结基础算法的思想">
 <meta property="og:url" content="http://ricardoxu.github.io/2016/06/12/2016-06-12-简单总结基础算法的思想/index.html">
 <meta property="og:site_name" content="XZM's Blog">
-<meta property="og:description" content="最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。
-最小生成树Prim在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。
-最短路径Spfa以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首">
-<meta property="og:updated_time" content="2016-07-04T08:25:40.622Z">
+<meta property="og:description" content="最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。">
+<meta property="og:updated_time" content="2016-07-06T07:13:12.458Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单总结基础算法的思想">
-<meta name="twitter:description" content="最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。
-最小生成树Prim在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。
-最短路径Spfa以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首">
+<meta name="twitter:description" content="最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -39,7 +33,7 @@
 
 
 
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
 
 
 
@@ -102,7 +96,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
+            <img src="/img/EZ.png" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/">XZM</a></h1>
@@ -125,16 +119,6 @@
                             <div class="ribbon"></div>
                         </div>
                         
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
                         
                     </div>
                     
@@ -145,10 +129,6 @@
                         <li>菜单</li>
                         <li>标签</li>
                         
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -165,8 +145,6 @@
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
-                            <li><a href="/tags/">标签云</a></li>
-                        
                             <li><a href="/about/">关于我</a></li>
                         
                         </ul>
@@ -174,11 +152,11 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                                <a class="fa Email" href="/xuziming6767@gmail.com" title="Email"></a>
                             
-                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                                <a class="fa GitHub" href="https://github.com/RicardoXu" title="GitHub"></a>
                             
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                                <a class="fa 新浪微博" href="http://weibo.com/xzm0307" title="新浪微博"></a>
                             
                         </ul>
                     </nav>
@@ -187,31 +165,13 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shadowsocks/">Shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/比赛/">比赛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li></ul>
                     </div>
                 </section>
                 
                 
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
-                    
-                    </div>
-                </section>
                 
 
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">专注于前端</div>
-                </section>
                 
             </div>
         </div>
@@ -227,7 +187,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
+                <img src="/img/EZ.png" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页">XZM</a></h1>
@@ -240,8 +200,6 @@
                 
                     <li><a href="/archives/">所有文章</a></li>
                 
-                    <li><a href="/tags/">标签云</a></li>
-                
                     <li><a href="/about/">关于我</a></li>
                 
                 <div class="clearfix"></div>
@@ -250,11 +208,11 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="/xuziming6767@gmail.com" title="Email"></a>
                             
-                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                                <a class="fa GitHub" target="_blank" href="https://github.com/RicardoXu" title="GitHub"></a>
                             
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/xzm0307" title="新浪微博"></a>
                             
                         </ul>
             </nav>
@@ -291,6 +249,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -299,6 +261,7 @@
       
           
         <p>最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。</p>
+<a id="more"></a>
 <h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><h2 id="Prim"><a href="#Prim" class="headerlink" title="Prim"></a>Prim</h2><p>在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。</p>
 <h1 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h1><h2 id="Spfa"><a href="#Spfa" class="headerlink" title="Spfa"></a>Spfa</h2><p>以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首个结点，经过该点松弛dist【v】，如果松弛成功，则将成功的点加入队列，重复该过程直至队列为空。</p>
 <h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="QuickSort"><a href="#QuickSort" class="headerlink" title="QuickSort"></a>QuickSort</h2><p>选择位于中间数值作为判断标准，从两端开始将大于/小于该值的数值进行交换，直到不能进行为止，这保证了排序后的结果是以中间数值为标准左小右大的。之后从最左端到当前位置，从当前位置到最右端递归该过程。</p>
@@ -314,7 +277,7 @@
         <p><span>本文标题:</span><a href="/2016/06/12/2016-06-12-简单总结基础算法的思想/">简单总结基础算法的思想</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">XZM</a></p>
         <p><span>发布时间:</span>2016-06-12, 00:00:00</p>
-        <p><span>最后更新:</span>2016-07-04, 16:25:40</p>
+        <p><span>最后更新:</span>2016-07-06, 15:13:12</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/06/12/2016-06-12-简单总结基础算法的思想/" title="简单总结基础算法的思想">http://ricardoxu.github.io/2016/06/12/2016-06-12-简单总结基础算法的思想/</a>
             <span class="copy-path" data-clipboard-text="原文: http://ricardoxu.github.io/2016/06/12/2016-06-12-简单总结基础算法的思想/　　作者: XZM" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -400,6 +363,25 @@
 
 
     
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/06/12/2016-06-12-简单总结基础算法的思想/" data-title="简单总结基础算法的思想" data-url="http://ricardoxu.github.io/2016/06/12/2016-06-12-简单总结基础算法的思想/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"ricardoxu"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
 
 
 
@@ -420,7 +402,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/">中兴捧月2016软件编程竞赛</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/12/2016-06-12-简单总结基础算法的思想/">简单总结基础算法的思想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/2016-01-26-迁移Blog到Hexo/">迁移Blog到Hexo.md</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/13/2015-11-13-Shadowsocks使用指南/">Shadowsocks使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/10/2015-11-10-Jekyll使用指南/">Jekyll使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/10/2015-11-10-GitHub使用指南/">GitHub使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/07/2015-11-07-Markdown使用指南/">Markdown使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/07/2015-11-07-Vim使用指南/">Vim使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/07/2015-11-07-修改Ubuntu开机引导项/">修改Ubuntu开机引导项</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/16/2016-06-16-中兴捧月2016软件编程竞赛/">中兴捧月2016软件编程竞赛</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/12/2016-06-12-简单总结基础算法的思想/">简单总结基础算法的思想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/2016-01-26-迁移Blog到Hexo/">迁移Blog到Hexo.md</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/13/2015-11-13-Shadowsocks使用指南/">Shadowsocks使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/10/2015-11-10-GitHub使用指南/">GitHub使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/10/2015-11-10-Jekyll使用指南/">Jekyll使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/07/2015-11-07-修改Ubuntu开机引导项/">修改Ubuntu开机引导项</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/07/2015-11-07-Vim使用指南/">Vim使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/07/2015-11-07-Markdown使用指南/">Markdown使用指南</a></li></ul>
 
 
 
@@ -434,7 +416,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016 XZM
+                2015-2016 XZM
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
