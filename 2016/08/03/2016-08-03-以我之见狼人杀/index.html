@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="为了向高端Emacs党和Vim党看齐，了解了一下Vim，作为初学者记录了一些简单的用法。">
+<meta name="description" content="这几天在家里宅，看了好几期《Super liar》和《lying man》，不得不感慨一JY狼人杀真的强，顺带也想着把自己以前玩的时候的一些经验总结反思一下。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vim使用指南">
-<meta property="og:url" content="http://ricardoxu.github.io/2015/11/07/2015-11-07-Vim使用指南/index.html">
+<meta property="og:title" content="以我之见狼人杀">
+<meta property="og:url" content="http://ricardoxu.github.io/2016/08/03/2016-08-03-以我之见狼人杀/index.html">
 <meta property="og:site_name" content="XZM's Blog">
-<meta property="og:description" content="为了向高端Emacs党和Vim党看齐，了解了一下Vim，作为初学者记录了一些简单的用法。">
-<meta property="og:updated_time" content="2016-07-06T07:18:03.000Z">
+<meta property="og:description" content="这几天在家里宅，看了好几期《Super liar》和《lying man》，不得不感慨一JY狼人杀真的强，顺带也想着把自己以前玩的时候的一些经验总结反思一下。">
+<meta property="og:updated_time" content="2016-08-06T09:24:49.244Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vim使用指南">
-<meta name="twitter:description" content="为了向高端Emacs党和Vim党看齐，了解了一下Vim，作为初学者记录了一些简单的用法。">
+<meta name="twitter:title" content="以我之见狼人杀">
+<meta name="twitter:description" content="这几天在家里宅，看了好几期《Super liar》和《lying man》，不得不感慨一JY狼人杀真的强，顺带也想着把自己以前玩的时候的一些经验总结反思一下。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Vim使用指南 | XZM&#39;s Blog</title>
+<title>以我之见狼人杀 | XZM&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -216,11 +216,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-2015-11-07-Vim使用指南" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-2016-08-03-以我之见狼人杀" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/07/2015-11-07-Vim使用指南/" class="article-date">
-      <time datetime="2015-11-06T16:00:00.000Z" itemprop="datePublished">2015-11-07</time>
+      <a href="/2016/08/03/2016-08-03-以我之见狼人杀/" class="article-date">
+      <time datetime="2016-08-03T07:09:35.000Z" itemprop="datePublished">2016-08-03</time>
 </a>
 
 
@@ -235,7 +235,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Vim使用指南
+      以我之见狼人杀
     </h1>
   
 
@@ -246,7 +246,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/">Vim</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -256,28 +256,22 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>为了向高端Emacs党和Vim党看齐，了解了一下Vim，作为初学者记录了一些简单的用法。</p>
+        <p>这几天在家里宅，看了好几期《Super liar》和《lying man》，不得不感慨一JY狼人杀真的强，顺带也想着把自己以前玩的时候的一些经验总结反思一下。</p>
 <a id="more"></a>
-<p>OS: Ubuntu</p>
-<p>安装： sudo apt-get install vim-gtk</p>
-<p>配置： sudo vim /etc/vim/vimrc</p>
-<p>在最后一行开始输入：</p>
-<p>set nu // 在左侧行号</p>
-<p>set tabstop=4 //tab 长度设置为 4</p>
-<p>set nobackup //覆盖文件时不备份</p>
-<p>set cursorline //突出显示当前行</p>
-<p>set ruler //在右下角显示光标位置的状态行</p>
-<p>set autoindent //自动缩进</p>
-<h2 id="Insert模式"><a href="#Insert模式" class="headerlink" title="Insert模式"></a>Insert模式</h2><p>按下 i 键进入Insert模式，在Insert模式中，可以进行文字的编辑。</p>
-<p>按下Esc键返回Normal模式。</p>
-<h2 id="Normal模式"><a href="#Normal模式" class="headerlink" title="Normal模式"></a>Normal模式</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ul>
-<li>x 删当前光标所在的个字符。</li>
-<li>:wq 存盘 + 退出(:w 存盘, :q 退出)。</li>
-<li>dd 删除当前行，并把删除的行存到剪贴板里。</li>
-<li>p 粘贴剪贴板到当前行的下一行</li>
-</ul>
-<h3 id="进阶操作"><a href="#进阶操作" class="headerlink" title="进阶操作"></a>进阶操作</h3><p>以后学会了慢慢补充。</p>
-<p>2015-11-07</p>
+<p>首先说一点，我觉得这个游戏本质上是一个心态游戏。无论是逻辑、表情、语言都是围绕着辨别玩家角色心态进行的。</p>
+<p>所谓心态，是玩家说在抽到一个角色时，不可避免会代入这个角色的心态，而玩家的任务就是尽力隐藏自己的真实心态，同时辨识出其他玩家的心态。</p>
+<p>举个例子，你抽到狼人牌，那你一定会有狼人心态，换个词就是杀心。你的一切行为都是为了屠杀神或者民的，但是你不能明目张胆的杀，一定要给自己找到合适的理由，同时感染其他的投票者和你一切投，这是狼人的玩法，除非你要当隐狼，不然不这么玩就是在打酱油。那么其他好身份玩家就是要寻找抱着这样心态的玩家，并把他们投票驱逐。</p>
+<p>其他的你都可以隐藏，唯有心态这个东西藏不了，或者说是目的也好，毕竟这是赢的游戏的必要条件。</p>
+<p>那么之后就想分别说说我自己认为的几个角色的心态。</p>
+<p>狼人：上面说了狼人，一般狼人的配置里还会有一只隐狼，隐狼的核心任务就是藏，可以大隐隐于市，传个强身衣服坐稳，也可以的悄悄咪咪的装平民，这里有个小tips，装平民可以把自己想象成一个真平民……</p>
+<p>预言家：相对而因预言家的任务比较简单，也很流程化，核心尽量提供多的夜晚验人信息，主要手段是要抢到警长合理归票，同时安排好其他好人阵营的工作，保证自己活着，毕竟活着才有输出。</p>
+<p>女巫：女巫核心是保一轮预言家，毒一只狼人，同时夜晚的杀人情况也相当于半个预言家，应该在尽可能用完药的前提下跳出来带领好人阵营分辨局势。</p>
+<p>猎人：猎人核心是认人和隐藏，在屠边局尽量找机会开枪，因为被动技能的存在狼人不会在多神暴露的情况下优先击杀猎人，和预言家相反，这人是死了才有输出……</p>
+<p>白痴：白痴基本就和平民差不多吧，还有一项要求是要隐藏好自己，对于屠边局来说藏得好的白痴才是好白痴……</p>
+<p>平民：相对而言平民的难度系数最高（因为信息最少），对于平民而言，最优先级的任务是摸清场上的人物身份，之后再说穿衣服挡刀之类的，不然很有可能造成穿错衣服、当了暴民、投死预言家之类等等大鱼行为……</p>
+<p>总而言之，这个游戏要参与进去才有意思咧，多发言是玩好狼人杀的第一步（但是请不要太鱼哦）。</p>
+<p>以上。</p>
+<p>2016-08-03</p>
 
       
     </div>
@@ -286,13 +280,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/11/07/2015-11-07-Vim使用指南/">Vim使用指南</a></p>
+        <p><span>本文标题:</span><a href="/2016/08/03/2016-08-03-以我之见狼人杀/">以我之见狼人杀</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">XZM</a></p>
-        <p><span>发布时间:</span>2015-11-07, 00:00:00</p>
-        <p><span>最后更新:</span>2016-07-06, 15:18:03</p>
+        <p><span>发布时间:</span>2016-08-03, 15:09:35</p>
+        <p><span>最后更新:</span>2016-08-06, 17:24:49</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/11/07/2015-11-07-Vim使用指南/" title="Vim使用指南">http://ricardoxu.github.io/2015/11/07/2015-11-07-Vim使用指南/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://ricardoxu.github.io/2015/11/07/2015-11-07-Vim使用指南/　　作者: XZM" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/03/2016-08-03-以我之见狼人杀/" title="以我之见狼人杀">http://ricardoxu.github.io/2016/08/03/2016-08-03-以我之见狼人杀/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://ricardoxu.github.io/2016/08/03/2016-08-03-以我之见狼人杀/　　作者: XZM" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -304,12 +298,12 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2015/11/07/2015-11-07-修改Ubuntu开机引导项/">
-                    修改Ubuntu开机引导项
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/07/14/2016-07-14-我的研一生活/">
+                    我的研一生活
                 </a>
             </div>
-        
         
     </nav>
 
@@ -319,7 +313,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Insert模式"><span class="toc-number">1.</span> <span class="toc-text">Insert模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normal模式"><span class="toc-number">2.</span> <span class="toc-text">Normal模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-number">2.1.</span> <span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进阶操作"><span class="toc-number">2.2.</span> <span class="toc-text">进阶操作</span></a></li></ol></li></ol>
+            
         
     </div>
     <style>
@@ -355,7 +349,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Vim使用指南　| XZM's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"以我之见狼人杀　| XZM's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -371,7 +365,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2015/11/07/2015-11-07-Vim使用指南/" data-title="Vim使用指南" data-url="http://ricardoxu.github.io/2015/11/07/2015-11-07-Vim使用指南/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/08/03/2016-08-03-以我之见狼人杀/" data-title="以我之见狼人杀" data-url="http://ricardoxu.github.io/2016/08/03/2016-08-03-以我之见狼人杀/"></div>
     <script>
         var duoshuoQuery = {short_name:"ricardoxu"};
         var loadComment = function(){
@@ -394,15 +388,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2015/11/07/2015-11-07-修改Ubuntu开机引导项/" title="上一篇: 修改Ubuntu开机引导项">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/07/14/2016-07-14-我的研一生活/" title="下一篇: 我的研一生活">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
