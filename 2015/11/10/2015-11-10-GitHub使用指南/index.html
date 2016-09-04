@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://ricardoxu.github.io/2015/11/10/2015-11-10-GitHub使用指南/index.html">
 <meta property="og:site_name" content="XZM's Blog">
 <meta property="og:description" content="这是一份不完备的Ubuntu下使用Github的指南。">
-<meta property="og:updated_time" content="2016-09-04T07:52:52.371Z">
+<meta property="og:updated_time" content="2016-09-04T12:26:55.379Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub使用指南">
 <meta name="twitter:description" content="这是一份不完备的Ubuntu下使用Github的指南。">
@@ -286,6 +286,40 @@ $ git config --global user.email  &quot;youremail@email.com&quot;
 </code></pre><p>作为master分支上传：</p>
 <pre><code>git push -u origin master
 </code></pre><h2 id="从github下拉仓库"><a href="#从github下拉仓库" class="headerlink" title="从github下拉仓库"></a>从github下拉仓库</h2><pre><code>git clone https://……
+</code></pre><h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><h3 id="本地分支"><a href="#本地分支" class="headerlink" title="本地分支"></a>本地分支</h3><p>创建分支并转到：</p>
+<pre><code>git checkout -b branchname
+</code></pre><p>该命令等价于：</p>
+<pre><code>git branch branchname
+git checkout branchname
+</code></pre><p>查看当前分支：</p>
+<pre><code>git branch
+</code></pre><p>之后就可以在当前分支上正常add、commit。</p>
+<p>如果需要切换分支，使用命令：</p>
+<pre><code>git checkout branchname
+</code></pre><p>需要把其他分支的成果合并到当前分支时，使用命令：</p>
+<pre><code>git merge otherbranchname
+</code></pre><p>合并完成后可以删除其他分支，使用命令：</p>
+<pre><code>git branch -d otherbranchname
+</code></pre><h3 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h3><p>将一个本地分支推送到远程作为某一分支：</p>
+<pre><code>git push origin localbranch：remotebranch
+</code></pre><p>删除某个远程分支：</p>
+<pre><code>git push origin :newbranch 
+</code></pre><p>注意在:的左边是没有字符的，这代表了删除。</p>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><p>打标签只需要切换到目标分支上，使用命令：</p>
+<pre><code>git tag tagname
+</code></pre><p>也可以给之前的版本打标签，使用命令：</p>
+<pre><code>git tag -a tagname 7位校验和
+</code></pre><p>查看所有标签需要使用命令：</p>
+<pre><code>git tag
+</code></pre><p>查看标签信息：</p>
+<pre><code>git show tagname
+</code></pre><p>删除标签：</p>
+<pre><code>git tag -d tagname
+</code></pre><p>通常push不会将标签提交到git服务器，需要显式的操作提交单个或者全部的标签：</p>
+<pre><code>git push origin tagname
+git push origin --tags
+</code></pre><h2 id="查看历史记录"><a href="#查看历史记录" class="headerlink" title="查看历史记录"></a>查看历史记录</h2><p>显示前3条log信息，简单的哈希值，作者，提交时间，提交说明：</p>
+<pre><code>git log --pretty=format:&quot;%h %an %ar %s&quot; -3
 </code></pre><p>以上。</p>
 <p>2015-11-10</p>
 
@@ -299,7 +333,7 @@ $ git config --global user.email  &quot;youremail@email.com&quot;
         <p><span>本文标题:</span><a href="/2015/11/10/2015-11-10-GitHub使用指南/">GitHub使用指南</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">XZM</a></p>
         <p><span>发布时间:</span>2015-11-10, 00:00:00</p>
-        <p><span>最后更新:</span>2016-09-04, 15:52:52</p>
+        <p><span>最后更新:</span>2016-09-04, 20:26:55</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2015/11/10/2015-11-10-GitHub使用指南/" title="GitHub使用指南">http://ricardoxu.github.io/2015/11/10/2015-11-10-GitHub使用指南/</a>
             <span class="copy-path" data-clipboard-text="原文: http://ricardoxu.github.io/2015/11/10/2015-11-10-GitHub使用指南/　　作者: XZM" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -335,7 +369,7 @@ $ git config --global user.email  &quot;youremail@email.com&quot;
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ubuntu平台"><span class="toc-number">1.</span> <span class="toc-text">Ubuntu平台</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">1.2.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成ssh"><span class="toc-number">1.2.1.</span> <span class="toc-text">生成ssh</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Windows平台"><span class="toc-number">2.</span> <span class="toc-text">Windows平台</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git操作"><span class="toc-number">3.</span> <span class="toc-text">Git操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#新建本地仓库"><span class="toc-number">3.1.</span> <span class="toc-text">新建本地仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传github"><span class="toc-number">3.2.</span> <span class="toc-text">上传github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从github下拉仓库"><span class="toc-number">3.3.</span> <span class="toc-text">从github下拉仓库</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ubuntu平台"><span class="toc-number">1.</span> <span class="toc-text">Ubuntu平台</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">1.2.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成ssh"><span class="toc-number">1.2.1.</span> <span class="toc-text">生成ssh</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Windows平台"><span class="toc-number">2.</span> <span class="toc-text">Windows平台</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git操作"><span class="toc-number">3.</span> <span class="toc-text">Git操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#新建本地仓库"><span class="toc-number">3.1.</span> <span class="toc-text">新建本地仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传github"><span class="toc-number">3.2.</span> <span class="toc-text">上传github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从github下拉仓库"><span class="toc-number">3.3.</span> <span class="toc-text">从github下拉仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分支管理"><span class="toc-number">3.4.</span> <span class="toc-text">分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#本地分支"><span class="toc-number">3.4.1.</span> <span class="toc-text">本地分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程分支"><span class="toc-number">3.4.2.</span> <span class="toc-text">远程分支</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签"><span class="toc-number">3.5.</span> <span class="toc-text">标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看历史记录"><span class="toc-number">3.6.</span> <span class="toc-text">查看历史记录</span></a></li></ol></li></ol>
         
     </div>
     <style>
