@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://ricardoxu.github.io/2015/11/10/2015-11-10-GitHub使用指南/index.html">
 <meta property="og:site_name" content="XZM's Blog">
 <meta property="og:description" content="这是一份不完备的Ubuntu下使用Github的指南。">
-<meta property="og:updated_time" content="2016-07-06T07:17:11.000Z">
+<meta property="og:updated_time" content="2016-09-04T07:52:52.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub使用指南">
 <meta name="twitter:description" content="这是一份不完备的Ubuntu下使用Github的指南。">
@@ -258,18 +258,35 @@
           
         <p>这是一份不完备的Ubuntu下使用Github的指南。</p>
 <a id="more"></a>
-<h2 id="平台"><a href="#平台" class="headerlink" title="平台"></a>平台</h2><p>Ubuntu 15.10</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>sudo apt-get install git</code></p>
-<p><code>sudo apt-get install git-core</code></p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="生成ssh"><a href="#生成ssh" class="headerlink" title="生成ssh"></a>生成ssh</h3><p><code>ssh-keygen -C &quot;email&quot; -t rsa</code></p>
-<p>登陆GitHub，记录ssh，检查结果。</p>
-<p><code>ssh -v git@github.com</code></p>
-<p>这里还需要绑定一下自己的账号。</p>
-<h3 id="Clone"><a href="#Clone" class="headerlink" title="Clone"></a>Clone</h3><p><code>git clone https://……</code></p>
-<h3 id="提交commit"><a href="#提交commit" class="headerlink" title="提交commit"></a>提交commit</h3><p><code>git add .</code> //往暂存区域添加已添加和修改的文件，不处理删除的文件</p>
-<p><code>git status</code> //比较本地数据目录与暂存区域的变化</p>
-<p><code>git commit -m &quot;commit directions&quot;</code>    //提到代码到本地数据目录，并添加提交说明</p>
-<p><code>git push</code> //提交git</p>
+<h1 id="Ubuntu平台"><a href="#Ubuntu平台" class="headerlink" title="Ubuntu平台"></a>Ubuntu平台</h1><p>Ubuntu 15.10</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>sudo apt-get install git
+
+sudo apt-get install git-core
+</code></pre><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="生成ssh"><a href="#生成ssh" class="headerlink" title="生成ssh"></a>生成ssh</h3><pre><code>ssh-keygen -C &quot;email&quot; -t rsa
+</code></pre><p>登陆GitHub，记录ssh，检查结果。</p>
+<pre><code>ssh -v git@github.com
+</code></pre><p>这里还需要绑定一下自己的账号。</p>
+<h1 id="Windows平台"><a href="#Windows平台" class="headerlink" title="Windows平台"></a>Windows平台</h1><p>在Git Bash执行命令，生成文件id_rsa.pub：</p>
+<pre><code>ssh-keygen
+</code></pre><p>将文件内容添加到GitHub帐号之后，执行命令，检测是否联通：</p>
+<pre><code>ssh -T git@github.com
+</code></pre><p>并且执行命令，关联账号：</p>
+<pre><code>$ git config --global user.name &quot;yourname&quot;
+$ git config --global user.email  &quot;youremail@email.com&quot;
+</code></pre><h1 id="Git操作"><a href="#Git操作" class="headerlink" title="Git操作"></a>Git操作</h1><h2 id="新建本地仓库"><a href="#新建本地仓库" class="headerlink" title="新建本地仓库"></a>新建本地仓库</h2><p>切换到新建好的仓库目录下，执行命令</p>
+<pre><code>git init
+</code></pre><h2 id="上传github"><a href="#上传github" class="headerlink" title="上传github"></a>上传github</h2><p>往暂存区域添加已添加和修改的文件，不处理删除的文件，.代表全部添加，针对特定文件可直接输入文件名：</p>
+<pre><code>git add .
+</code></pre><p>比较本地数据目录与暂存区域的变化，在实际操作中可以省略：</p>
+<pre><code>git status
+</code></pre><p>提到代码到本地git，并添加提交说明：</p>
+<pre><code>git commit -m &quot;commit directions&quot;
+</code></pre><p>关联到github：</p>
+<pre><code>git remote add origin git@github.com:UserName/Respository
+</code></pre><p>作为master分支上传：</p>
+<pre><code>git push -u origin master
+</code></pre><h2 id="从github下拉仓库"><a href="#从github下拉仓库" class="headerlink" title="从github下拉仓库"></a>从github下拉仓库</h2><pre><code>git clone https://……
+</code></pre><p>以上。</p>
 <p>2015-11-10</p>
 
       
@@ -282,7 +299,7 @@
         <p><span>本文标题:</span><a href="/2015/11/10/2015-11-10-GitHub使用指南/">GitHub使用指南</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">XZM</a></p>
         <p><span>发布时间:</span>2015-11-10, 00:00:00</p>
-        <p><span>最后更新:</span>2016-07-06, 15:17:11</p>
+        <p><span>最后更新:</span>2016-09-04, 15:52:52</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2015/11/10/2015-11-10-GitHub使用指南/" title="GitHub使用指南">http://ricardoxu.github.io/2015/11/10/2015-11-10-GitHub使用指南/</a>
             <span class="copy-path" data-clipboard-text="原文: http://ricardoxu.github.io/2015/11/10/2015-11-10-GitHub使用指南/　　作者: XZM" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -318,7 +335,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#平台"><span class="toc-number">1.</span> <span class="toc-text">平台</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成ssh"><span class="toc-number">3.1.</span> <span class="toc-text">生成ssh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Clone"><span class="toc-number">3.2.</span> <span class="toc-text">Clone</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提交commit"><span class="toc-number">3.3.</span> <span class="toc-text">提交commit</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ubuntu平台"><span class="toc-number">1.</span> <span class="toc-text">Ubuntu平台</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">1.2.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成ssh"><span class="toc-number">1.2.1.</span> <span class="toc-text">生成ssh</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Windows平台"><span class="toc-number">2.</span> <span class="toc-text">Windows平台</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git操作"><span class="toc-number">3.</span> <span class="toc-text">Git操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#新建本地仓库"><span class="toc-number">3.1.</span> <span class="toc-text">新建本地仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传github"><span class="toc-number">3.2.</span> <span class="toc-text">上传github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从github下拉仓库"><span class="toc-number">3.3.</span> <span class="toc-text">从github下拉仓库</span></a></li></ol></li></ol>
         
     </div>
     <style>
