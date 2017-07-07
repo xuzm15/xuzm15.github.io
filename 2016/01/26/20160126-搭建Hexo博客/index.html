@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="xuzm's Blog">
 <meta property="og:description" content="这学期开始有个想法是在GitHub上搭一个自己的博客，一开始的想法是使用Jekyll，后来由于要做其他项目于是只做了简单的文章发布功能，同时界面实在谈不上好看。临近过年，终于稍微清闲一些，偶然发觉Hexo更容易上手并且效果不错，于是就把博客的内容迁移过来了。
 这里只简单记录一些Hexo写文章和发布的指令，配置以及其他教程可以Google或者访问Hexo的文档">
-<meta property="og:updated_time" content="2017-01-01T06:25:19.662Z">
+<meta property="og:updated_time" content="2017-07-07T05:52:04.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建Hexo博客">
 <meta name="twitter:description" content="这学期开始有个想法是在GitHub上搭一个自己的博客，一开始的想法是使用Jekyll，后来由于要做其他项目于是只做了简单的文章发布功能，同时界面实在谈不上好看。临近过年，终于稍微清闲一些，偶然发觉Hexo更容易上手并且效果不错，于是就把博客的内容迁移过来了。
@@ -351,16 +351,20 @@
         <p>这学期开始有个想法是在GitHub上搭一个自己的博客，一开始的想法是使用Jekyll，后来由于要做其他项目于是只做了简单的文章发布功能，同时界面实在谈不上好看。临近过年，终于稍微清闲一些，偶然发觉Hexo更容易上手并且效果不错，于是就把博客的内容迁移过来了。</p>
 <p>这里只简单记录一些Hexo写文章和发布的指令，配置以及其他教程可以Google或者访问Hexo的<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">文档</a></p>
 <a id="more"></a>
-<h1 id="前置工作"><a href="#前置工作" class="headerlink" title="前置工作"></a>前置工作</h1><p>关联Hexo和GitHub之前需要在Github添加ssh</p>
-<p>在<code>Git Bash</code>执行指令生成文件id_rsa.pub，将文件内容添加到GitHub帐号后检测是否联通。</p>
+<h1 id="前置工作"><a href="#前置工作" class="headerlink" title="前置工作"></a>前置工作</h1><p>安装Hexo之前需要安装Git和Node.js。具体的方法可以去官网查看。</p>
+<p>OS: Windows 10</p>
+<h1 id="关联账号"><a href="#关联账号" class="headerlink" title="关联账号"></a>关联账号</h1><p>由于我的Hexo博客是挂GitHub的，所以需要关联Hexo和GitHub。</p>
+<p>第一步是在GitHub添加ssh，用Git Bash执行指令生成文件id_rsa.pub，将文件内容添加到GitHub帐号后检测是否联通。</p>
 <pre><code>ssh-keygen
 ssh -T git@github.com
 </code></pre><p>之后执行以下指令注明全局用户信息。</p>
-<pre><code>$ git config --global user.name &quot;yourname&quot;
-$ git config --global user.email  &quot;youremail@email.com&quot;
-</code></pre><h1 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h1><p>新建文章指令：<code>$ hexo new [layout] &lt;title&gt;</code></p>
-<p>例如：<code>$ hexo new &quot;Hello World.md&quot;</code></p>
-<h1 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h1><p>Hexo提供了快速方便的一键发布功能，只需一条指令就能将网站部署到服务器：<code>$ hexo generate --deploy</code></p>
+<pre><code>git config --global user.name &quot;yourname&quot;
+git config --global user.email  &quot;youremail@email.com&quot;
+</code></pre><h1 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h1><p>新建文章指令：</p>
+<pre><code>hexo new [layout] &lt;title&gt;
+</code></pre><p>例如：</p>
+<pre><code>$ hexo new &quot;Hello World.md&quot;
+</code></pre><h1 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h1><p>Hexo提供了快速方便的一键发布功能，只需一条指令就能将网站部署到服务器：<code>$ hexo generate --deploy</code></p>
 <p>不过在开始之前，需要先安装hexo-deployer-git：<code>$ npm install hexo-deployer-git --save</code></p>
 <p>同时在 <code>_config.yml</code> 中修改配置：</p>
 <pre><code>deploy:
@@ -407,7 +411,7 @@ $ git config --global user.email  &quot;youremail@email.com&quot;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/13/20151113-Shadowsocks/" rel="next" title="Shadowsocks">
+              <a href="/2015/11/13/20151113-使用Shadowsocks代理上网/" rel="next" title="Shadowsocks">
                 <i class="fa fa-chevron-left"></i> Shadowsocks
               </a>
             
@@ -417,7 +421,7 @@ $ git config --global user.email  &quot;youremail@email.com&quot;
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/12/20160612-竞赛常用算法思路小结/" rel="prev" title="OI竞赛常用算法思路小结">
+              <a href="/2016/06/12/20160612-信息学竞赛常用算法（一）/" rel="prev" title="OI竞赛常用算法思路小结">
                 OI竞赛常用算法思路小结 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -493,7 +497,7 @@ $ git config --global user.email  &quot;youremail@email.com&quot;
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -559,7 +563,7 @@ $ git config --global user.email  &quot;youremail@email.com&quot;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前置工作"><span class="nav-number">1.</span> <span class="nav-text">前置工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写文章"><span class="nav-number">2.</span> <span class="nav-text">写文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发布"><span class="nav-number">3.</span> <span class="nav-text">发布</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可能遇到的错误"><span class="nav-number">4.</span> <span class="nav-text">可能遇到的错误</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前置工作"><span class="nav-number">1.</span> <span class="nav-text">前置工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关联账号"><span class="nav-number">2.</span> <span class="nav-text">关联账号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写作"><span class="nav-number">3.</span> <span class="nav-text">写作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发布"><span class="nav-number">4.</span> <span class="nav-text">发布</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可能遇到的错误"><span class="nav-number">5.</span> <span class="nav-text">可能遇到的错误</span></a></li></ol></div>
             
 
           </div>
