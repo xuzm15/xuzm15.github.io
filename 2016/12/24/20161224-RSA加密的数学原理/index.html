@@ -84,16 +84,25 @@
 
 
 
-<meta name="description" content="脑洞癌晚期患者，偶尔会更一些技术和人生感悟（大雾）的文章。">
+<meta name="description" content="RSA算法RSA算法是一种非对称加密算法，所谓非对称加密算法是指（1）乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。（2）甲方获取乙方的公钥，然后用它对信息加密。（3）乙方得到加密后的信息，用私钥解密。那么关于公钥和私钥是什么关系呢？乙方又是如何用私钥去解密甲方发过来的信息呢？
+RSA算法实现
+随意选择两个大的质数p和q，p不等于q，计算N=pq。
+根据欧拉函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RSA算法的数学原理">
 <meta property="og:url" content="http://xuzm.space/2016/12/24/20161224-RSA加密的数学原理/index.html">
 <meta property="og:site_name" content="xuzm's Blog">
-<meta property="og:description" content="脑洞癌晚期患者，偶尔会更一些技术和人生感悟（大雾）的文章。">
-<meta property="og:updated_time" content="2016-12-24T01:15:28.201Z">
+<meta property="og:description" content="RSA算法RSA算法是一种非对称加密算法，所谓非对称加密算法是指（1）乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。（2）甲方获取乙方的公钥，然后用它对信息加密。（3）乙方得到加密后的信息，用私钥解密。那么关于公钥和私钥是什么关系呢？乙方又是如何用私钥去解密甲方发过来的信息呢？
+RSA算法实现
+随意选择两个大的质数p和q，p不等于q，计算N=pq。
+根据欧拉函数">
+<meta property="og:updated_time" content="2017-07-07T08:55:51.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RSA算法的数学原理">
-<meta name="twitter:description" content="脑洞癌晚期患者，偶尔会更一些技术和人生感悟（大雾）的文章。">
+<meta name="twitter:description" content="RSA算法RSA算法是一种非对称加密算法，所谓非对称加密算法是指（1）乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。（2）甲方获取乙方的公钥，然后用它对信息加密。（3）乙方得到加密后的信息，用私钥解密。那么关于公钥和私钥是什么关系呢？乙方又是如何用私钥去解密甲方发过来的信息呢？
+RSA算法实现
+随意选择两个大的质数p和q，p不等于q，计算N=pq。
+根据欧拉函数">
 
 
 
@@ -345,7 +354,28 @@
       
 
       
-        
+        <a id="more"></a>
+<h1 id="RSA算法"><a href="#RSA算法" class="headerlink" title="RSA算法"></a>RSA算法</h1><p>RSA算法是一种非对称加密算法，所谓非对称加密算法是指（1）乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。（2）甲方获取乙方的公钥，然后用它对信息加密。（3）乙方得到加密后的信息，用私钥解密。那么关于公钥和私钥是什么关系呢？乙方又是如何用私钥去解密甲方发过来的信息呢？</p>
+<h1 id="RSA算法实现"><a href="#RSA算法实现" class="headerlink" title="RSA算法实现"></a>RSA算法实现</h1><ol>
+<li>随意选择两个大的质数p和q，p不等于q，计算N=pq。</li>
+<li>根据欧拉函数，不大于N且与N互质的整数个数为f(n)=(p-1)(q-1)</li>
+<li>选择一个整数e与f(n)互质，并且e小于f(n)</li>
+<li>用以下这个公式计算d：d × e ≡ 1 (mod f(n))</li>
+<li>将p和q的记录销毁。</li>
+</ol>
+<p>整个过程中一共出现了6个参数p q N f(n) e d，最后我们将（n,e）封装成公钥，（n,d）封装成私钥。</p>
+<h1 id="加密解密流程"><a href="#加密解密流程" class="headerlink" title="加密解密流程"></a>加密解密流程</h1><h2 id="公钥加密"><a href="#公钥加密" class="headerlink" title="公钥加密"></a>公钥加密</h2><p>对数字m加密（m可以是unicode，这样就可以解析信息），需要用到公钥（n,e）。</p>
+<p>$$m^e ≡ c (mod n)$$</p>
+<p>即</p>
+<p>$$c = m^e mod n$$</p>
+<p>将c发送给接收方。</p>
+<h2 id="私钥解密"><a href="#私钥解密" class="headerlink" title="私钥解密"></a>私钥解密</h2><p>$$c^d ≡ m (mod n)$$</p>
+<p>即</p>
+<p>$$m = c^d mod n$$</p>
+<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>将上两个式子联立，得到$$m = (m^{ed}) mod n$$</p>
+<p>证明该式可以按照<a href="http://www.ruanyifeng.com/blog/2013/07/rsa_algorithm_part_two.html" target="_blank" rel="external">证明</a>进行。</p>
+<h1 id="破解难度"><a href="#破解难度" class="headerlink" title="破解难度"></a>破解难度</h1><p>实际上RSA是可以被破解的，只是在破解的流程中需要做因数分解，目前计算机的性能做大数的因数分解还很困难，所以我们认为当选择足够大的数作为公钥和私钥后，RSA加密就是安全的。</p>
+
       
     </div>
 
@@ -381,8 +411,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/20/20161220-基于卷积神经网络的图像分类器（一）/" rel="prev" title="基于卷积神经网络的图像分类器（一）">
-                基于卷积神经网络的图像分类器（一） <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/20/20170120-基于卷积神经网络的图像分类器/" rel="prev" title="基于卷积神经网络的图像分类器">
+                基于卷积神经网络的图像分类器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -434,8 +464,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -448,7 +487,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -459,7 +498,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -504,6 +543,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RSA算法"><span class="nav-number">1.</span> <span class="nav-text">RSA算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RSA算法实现"><span class="nav-number">2.</span> <span class="nav-text">RSA算法实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加密解密流程"><span class="nav-number">3.</span> <span class="nav-text">加密解密流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#公钥加密"><span class="nav-number">3.1.</span> <span class="nav-text">公钥加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#私钥解密"><span class="nav-number">3.2.</span> <span class="nav-text">私钥解密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#证明"><span class="nav-number">3.3.</span> <span class="nav-text">证明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#破解难度"><span class="nav-number">4.</span> <span class="nav-text">破解难度</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>

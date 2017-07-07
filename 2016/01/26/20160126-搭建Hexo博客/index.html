@@ -85,18 +85,18 @@
 
 
 <meta name="description" content="这学期开始有个想法是在GitHub上搭一个自己的博客，一开始的想法是使用Jekyll，后来由于要做其他项目于是只做了简单的文章发布功能，同时界面实在谈不上好看。临近过年，终于稍微清闲一些，偶然发觉Hexo更容易上手并且效果不错，于是就把博客的内容迁移过来了。
-这里只简单记录一些Hexo写文章和发布的指令，配置以及其他教程可以Google或者访问Hexo的文档">
+这里只简单记录一些Hexo写作和发布的指令，配置以及其他教程可以Google或者访问Hexo的文档">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建Hexo博客">
 <meta property="og:url" content="http://xuzm.space/2016/01/26/20160126-搭建Hexo博客/index.html">
 <meta property="og:site_name" content="xuzm's Blog">
 <meta property="og:description" content="这学期开始有个想法是在GitHub上搭一个自己的博客，一开始的想法是使用Jekyll，后来由于要做其他项目于是只做了简单的文章发布功能，同时界面实在谈不上好看。临近过年，终于稍微清闲一些，偶然发觉Hexo更容易上手并且效果不错，于是就把博客的内容迁移过来了。
-这里只简单记录一些Hexo写文章和发布的指令，配置以及其他教程可以Google或者访问Hexo的文档">
-<meta property="og:updated_time" content="2017-07-07T05:52:04.884Z">
+这里只简单记录一些Hexo写作和发布的指令，配置以及其他教程可以Google或者访问Hexo的文档">
+<meta property="og:updated_time" content="2017-07-07T05:58:52.232Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建Hexo博客">
 <meta name="twitter:description" content="这学期开始有个想法是在GitHub上搭一个自己的博客，一开始的想法是使用Jekyll，后来由于要做其他项目于是只做了简单的文章发布功能，同时界面实在谈不上好看。临近过年，终于稍微清闲一些，偶然发觉Hexo更容易上手并且效果不错，于是就把博客的内容迁移过来了。
-这里只简单记录一些Hexo写文章和发布的指令，配置以及其他教程可以Google或者访问Hexo的文档">
+这里只简单记录一些Hexo写作和发布的指令，配置以及其他教程可以Google或者访问Hexo的文档">
 
 
 
@@ -349,11 +349,12 @@
 
       
         <p>这学期开始有个想法是在GitHub上搭一个自己的博客，一开始的想法是使用Jekyll，后来由于要做其他项目于是只做了简单的文章发布功能，同时界面实在谈不上好看。临近过年，终于稍微清闲一些，偶然发觉Hexo更容易上手并且效果不错，于是就把博客的内容迁移过来了。</p>
-<p>这里只简单记录一些Hexo写文章和发布的指令，配置以及其他教程可以Google或者访问Hexo的<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">文档</a></p>
+<p>这里只简单记录一些Hexo写作和发布的指令，配置以及其他教程可以Google或者访问Hexo的<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">文档</a></p>
 <a id="more"></a>
 <h1 id="前置工作"><a href="#前置工作" class="headerlink" title="前置工作"></a>前置工作</h1><p>安装Hexo之前需要安装Git和Node.js。具体的方法可以去官网查看。</p>
 <p>OS: Windows 10</p>
-<h1 id="关联账号"><a href="#关联账号" class="headerlink" title="关联账号"></a>关联账号</h1><p>由于我的Hexo博客是挂GitHub的，所以需要关联Hexo和GitHub。</p>
+<h1 id="关联账号"><a href="#关联账号" class="headerlink" title="关联账号"></a>关联账号</h1><p>注：似乎不做这一步也可以，在部署的时候会弹出对话框要求登录GitHub，那时候直接输入账号密码也可。</p>
+<p>由于我的Hexo博客是挂GitHub的，所以需要关联Hexo和GitHub。</p>
 <p>第一步是在GitHub添加ssh，用Git Bash执行指令生成文件id_rsa.pub，将文件内容添加到GitHub帐号后检测是否联通。</p>
 <pre><code>ssh-keygen
 ssh -T git@github.com
@@ -421,7 +422,7 @@ git config --global user.email  &quot;youremail@email.com&quot;
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/12/20160612-信息学竞赛常用算法（一）/" rel="prev" title="OI竞赛常用算法思路小结">
+              <a href="/2016/06/12/20160612-OI竞赛常用算法思路小结/" rel="prev" title="OI竞赛常用算法思路小结">
                 OI竞赛常用算法思路小结 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -497,7 +498,7 @@ git config --global user.email  &quot;youremail@email.com&quot;
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -508,7 +509,7 @@ git config --global user.email  &quot;youremail@email.com&quot;
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

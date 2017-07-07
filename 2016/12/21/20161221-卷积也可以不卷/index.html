@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="脑洞癌晚期患者，偶尔会更一些技术和人生感悟（大雾）的文章。">
+<meta name="description" content="原文摘自：研学小记： 卷积不“卷”">
 <meta property="og:type" content="article">
 <meta property="og:title" content="卷积也可以不卷">
 <meta property="og:url" content="http://xuzm.space/2016/12/21/20161221-卷积也可以不卷/index.html">
 <meta property="og:site_name" content="xuzm's Blog">
-<meta property="og:description" content="脑洞癌晚期患者，偶尔会更一些技术和人生感悟（大雾）的文章。">
-<meta property="og:updated_time" content="2016-12-21T10:47:27.733Z">
+<meta property="og:description" content="原文摘自：研学小记： 卷积不“卷”">
+<meta property="og:updated_time" content="2017-07-07T07:44:10.782Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卷积也可以不卷">
-<meta name="twitter:description" content="脑洞癌晚期患者，偶尔会更一些技术和人生感悟（大雾）的文章。">
+<meta name="twitter:description" content="原文摘自：研学小记： 卷积不“卷”">
 
 
 
@@ -345,7 +345,26 @@
       
 
       
-        
+        <p>原文摘自：<a href="http://blog.sciencenet.cn/blog-4909-426493.html" target="_blank" rel="external">研学小记： 卷积不“卷”</a></p>
+<a id="more"></a>
+<h1 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h1><p>卷积的定义是符合下面公式的一种运算：<br>    ∫(-∞,∞)h(t-τ)f(τ)dτ = g(t)</p>
+<p>对卷积运算的历史源头缺乏考证。至少从1903年起，德国数学文献中就有Faltung和convolution这些称呼，其中含有“卷摺”的含义。也许从那个时候起，老师们就这样教导学生做卷积运算：为了计算每个时间点的卷积结果，需将h(τ)翻转为h(-τ)，再平移为h(t-τ)，与f(τ)作乘之后求面积。</p>
+<h1 id="不卷的卷积"><a href="#不卷的卷积" class="headerlink" title="不卷的卷积"></a>不卷的卷积</h1><p>这个解说是没错的，并且因为h(τ)要被翻转，成为“卷积”这个称呼的来源。但问题是，当卷积用于工程时（例如信号处理）这个解释符合物理事实吗？例如，一个线性系统的脉冲响应是h(t), 输入信号是 f(t), 在获得系统输出的过程中，必须要求h(t)或f(t)在时间上（或空间上）必须被翻转吗？这显然不是事实！现在的问题出在哪里？</p>
+<p>问题出在刚才的解说仅仅是一个数学解说。另一种解说就没有这样的困难：将h(t)平移一个时间量τ成为h(t-τ)，乘在τ处的函数值f(τ)，取遍所有τ，将乘积累积起来，就得到卷积的结果。后一种解释其实是最老的解释：叠加原理。按这种解释，卷积不必“卷”。（注：实际上看待该式的角度发生了变化，之前是以τ为自变量，t作为常量，而现在改变为以t为自变量，τ为t在不同时刻的取值，这种情况下自然不用考虑翻转，而是个很自然能想通的叠加问题。）</p>
+<p>不“卷”的理解给卷积计算上带来直观性的方便。以两个有限长序列的有限卷积为例，卷积计算可以和多位数乘法的做法完全类似。</p>
+<p>例：h(n) = {2 5 3}; f(n) = {3 0 12 4}。 计算格式可以如下：</p>
+<pre><code>h(n):           2   5   3   
+f(n):           3   0   12  4    
+-----------------------------------------------------------------------------
+                6   15  9
+                    0   0   0
+                        24  60  36
+    +                       8   20  12
+---------------------------------------------------------------------------------
+   g(n):        6   15  33  68  56  12   
+</code></pre><p>事实上，不“卷”的计算方法已被用来构造数字化的卷积器（离散卷积）。</p>
+<p>（注，卷积的另一种直观应用是在图像处理上。因为数字图像以像素作为基本单位，天然符合了滑窗运算的各项要求，所以在图像处理（增强、分割）和神经网络（卷积神经网络）上，相关的研究很多。）</p>
+
       
     </div>
 
@@ -371,7 +390,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/15/20161115-Annotation在javaweb中的应用/" rel="next" title="javaweb中annotation的总结">
+              <a href="/2016/11/15/20161115-JavaWeb中的Annotation/" rel="next" title="javaweb中annotation的总结">
                 <i class="fa fa-chevron-left"></i> javaweb中annotation的总结
               </a>
             
@@ -434,8 +453,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -448,7 +476,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -459,7 +487,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -504,6 +532,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#卷积"><span class="nav-number">1.</span> <span class="nav-text">卷积</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不卷的卷积"><span class="nav-number">2.</span> <span class="nav-text">不卷的卷积</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>

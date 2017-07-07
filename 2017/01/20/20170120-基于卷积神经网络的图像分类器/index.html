@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="算法," />
+  <meta name="keywords" content="卷积神经网络," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。">
+<meta name="description" content="文章记录了基于卷积神经网络、使用keras框架的实现图片分类器，可以针对黄瓜叶片的病虫害情况做出诊断。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OI竞赛常用算法思路小结">
-<meta property="og:url" content="http://xuzm.space/2016/06/12/20160612-信息学竞赛常用算法（一）/index.html">
+<meta property="og:title" content="基于卷积神经网络的图像分类器">
+<meta property="og:url" content="http://xuzm.space/2017/01/20/20170120-基于卷积神经网络的图像分类器/index.html">
 <meta property="og:site_name" content="xuzm's Blog">
-<meta property="og:description" content="最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。">
-<meta property="og:updated_time" content="2017-01-01T06:27:48.492Z">
+<meta property="og:description" content="文章记录了基于卷积神经网络、使用keras框架的实现图片分类器，可以针对黄瓜叶片的病虫害情况做出诊断。">
+<meta property="og:updated_time" content="2017-07-07T07:47:15.537Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OI竞赛常用算法思路小结">
-<meta name="twitter:description" content="最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。">
+<meta name="twitter:title" content="基于卷积神经网络的图像分类器">
+<meta name="twitter:description" content="文章记录了基于卷积神经网络、使用keras框架的实现图片分类器，可以针对黄瓜叶片的病虫害情况做出诊断。">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://xuzm.space/2016/06/12/20160612-信息学竞赛常用算法（一）/"/>
+  <link rel="canonical" href="http://xuzm.space/2017/01/20/20170120-基于卷积神经网络的图像分类器/"/>
 
 
 
 
 
-  <title> OI竞赛常用算法思路小结 | xuzm's Blog </title>
+  <title> 基于卷积神经网络的图像分类器 | xuzm's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://xuzm.space/2016/06/12/20160612-信息学竞赛常用算法（一）/">
+  <link itemprop="mainEntityOfPage" href="http://xuzm.space/2017/01/20/20170120-基于卷积神经网络的图像分类器/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="xuzm">
@@ -284,7 +284,7 @@
             
             
               
-                OI竞赛常用算法思路小结
+                基于卷积神经网络的图像分类器
               
             
           </h1>
@@ -299,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-12T00:00:00+08:00">
-                2016-06-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-20T17:35:17+08:00">
+                2017-01-20
               </time>
             
 
@@ -318,8 +318,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/06/12/20160612-信息学竞赛常用算法（一）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/12/20160612-信息学竞赛常用算法（一）/" itemprop="commentCount"></span>
+                <a href="/2017/01/20/20170120-基于卷积神经网络的图像分类器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/20/20170120-基于卷积神经网络的图像分类器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -345,12 +345,12 @@
       
 
       
-        <p>最近报了个信息学比赛，想把脑子里那些只剩下名字的算法捡一下，就写了这么个稿子，只有算法思想，不包含具体实现。</p>
+        <p>文章记录了基于卷积神经网络、使用keras框架的实现图片分类器，可以针对黄瓜叶片的病虫害情况做出诊断。</p>
 <a id="more"></a>
-<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h2><p>选择位于中间数值作为判断标准，从两端开始将大于/小于该值的数值进行交换，直到不能进行为止，这保证了排序后的结果是以中间数值为标准左小右大的。之后从最左端到当前位置，从当前位置到最右端递归该过程。</p>
-<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><h3 id="Prim"><a href="#Prim" class="headerlink" title="Prim"></a>Prim</h3><p>在图中任选一点作为初始生成树集合，找到从集合出发的权值最小边加入生成树，最小边的点加入集合，更新集合与剩余点的权值，再次寻找新的最小边，重复该过程直至所有点都进入生成树集合。</p>
-<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h2><h3 id="Spfa"><a href="#Spfa" class="headerlink" title="Spfa"></a>Spfa</h3><p>以源点S为初始队列，一维数组dist【v】是源点S到其余点的距离。从队列中取出首个结点，经过该点松弛dist【v】，如果松弛成功，则将成功的点加入队列，重复该过程直至队列为空。</p>
-<p>未完待续。</p>
+<h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p>这一节主要介绍神经网络的相关概念和反向传输过程。</p>
+<h1 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h1><p>这一节主要在神经网络的基础上介绍卷积神经网络。</p>
+<h1 id="keras框架"><a href="#keras框架" class="headerlink" title="keras框架"></a>keras框架</h1><p>这一节主要介绍keras框架和。</p>
+<h1 id="图片分类器"><a href="#图片分类器" class="headerlink" title="图片分类器"></a>图片分类器</h1><p>这一节主要介绍分类器的实现。</p>
 
       
     </div>
@@ -374,7 +374,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/卷积神经网络/" rel="tag"># 卷积神经网络</a>
           
         </div>
       
@@ -383,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/26/20160126-搭建Hexo博客/" rel="next" title="搭建Hexo博客">
-                <i class="fa fa-chevron-left"></i> 搭建Hexo博客
+              <a href="/2016/12/24/20161224-RSA加密的数学原理/" rel="next" title="RSA算法的数学原理">
+                <i class="fa fa-chevron-left"></i> RSA算法的数学原理
               </a>
             
           </div>
@@ -393,8 +393,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/16/20160616-中兴捧月2016算法竞赛解题报告/" rel="prev" title="中兴2016算法竞赛">
-                中兴2016算法竞赛 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/03/20170703-前端基础-HTML/" rel="prev" title="前端基础-HTML">
+                前端基础-HTML <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -421,8 +421,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/12/20160612-信息学竞赛常用算法（一）/"
-           data-title="OI竞赛常用算法思路小结" data-url="http://xuzm.space/2016/06/12/20160612-信息学竞赛常用算法（一）/">
+      <div class="ds-thread" data-thread-key="2017/01/20/20170120-基于卷积神经网络的图像分类器/"
+           data-title="基于卷积神经网络的图像分类器" data-url="http://xuzm.space/2017/01/20/20170120-基于卷积神经网络的图像分类器/">
       </div>
     
   </div>
@@ -469,7 +469,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -480,7 +480,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -535,7 +535,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#排序"><span class="nav-number">1.</span> <span class="nav-text">排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#快排"><span class="nav-number">1.1.</span> <span class="nav-text">快排</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树"><span class="nav-number">2.</span> <span class="nav-text">树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最小生成树"><span class="nav-number">2.1.</span> <span class="nav-text">最小生成树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Prim"><span class="nav-number">2.1.1.</span> <span class="nav-text">Prim</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图"><span class="nav-number">3.</span> <span class="nav-text">图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最短路径"><span class="nav-number">3.1.</span> <span class="nav-text">最短路径</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spfa"><span class="nav-number">3.1.1.</span> <span class="nav-text">Spfa</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络"><span class="nav-number">1.</span> <span class="nav-text">神经网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卷积神经网络"><span class="nav-number">2.</span> <span class="nav-text">卷积神经网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#keras框架"><span class="nav-number">3.</span> <span class="nav-text">keras框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片分类器"><span class="nav-number">4.</span> <span class="nav-text">图片分类器</span></a></li></ol></div>
             
 
           </div>
