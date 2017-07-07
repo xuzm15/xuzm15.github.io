@@ -84,25 +84,16 @@
 
 
 
-<meta name="description" content="RSA算法RSA算法是一种非对称加密算法，所谓非对称加密算法是指（1）乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。（2）甲方获取乙方的公钥，然后用它对信息加密。（3）乙方得到加密后的信息，用私钥解密。那么关于公钥和私钥是什么关系呢？乙方又是如何用私钥去解密甲方发过来的信息呢？
-RSA算法实现
-随意选择两个大的质数p和q，p不等于q，计算N=pq。
-根据欧拉函数">
+<meta name="description" content="RSA加密算法的原理。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RSA算法的数学原理">
 <meta property="og:url" content="http://xuzm.space/2016/12/24/20161224-RSA加密的数学原理/index.html">
 <meta property="og:site_name" content="xuzm's Blog">
-<meta property="og:description" content="RSA算法RSA算法是一种非对称加密算法，所谓非对称加密算法是指（1）乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。（2）甲方获取乙方的公钥，然后用它对信息加密。（3）乙方得到加密后的信息，用私钥解密。那么关于公钥和私钥是什么关系呢？乙方又是如何用私钥去解密甲方发过来的信息呢？
-RSA算法实现
-随意选择两个大的质数p和q，p不等于q，计算N=pq。
-根据欧拉函数">
-<meta property="og:updated_time" content="2017-07-07T08:55:51.858Z">
+<meta property="og:description" content="RSA加密算法的原理。">
+<meta property="og:updated_time" content="2017-07-07T08:58:03.703Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RSA算法的数学原理">
-<meta name="twitter:description" content="RSA算法RSA算法是一种非对称加密算法，所谓非对称加密算法是指（1）乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。（2）甲方获取乙方的公钥，然后用它对信息加密。（3）乙方得到加密后的信息，用私钥解密。那么关于公钥和私钥是什么关系呢？乙方又是如何用私钥去解密甲方发过来的信息呢？
-RSA算法实现
-随意选择两个大的质数p和q，p不等于q，计算N=pq。
-根据欧拉函数">
+<meta name="twitter:description" content="RSA加密算法的原理。">
 
 
 
@@ -354,7 +345,8 @@ RSA算法实现
       
 
       
-        <a id="more"></a>
+        <p>RSA加密算法的原理。</p>
+<a id="more"></a>
 <h1 id="RSA算法"><a href="#RSA算法" class="headerlink" title="RSA算法"></a>RSA算法</h1><p>RSA算法是一种非对称加密算法，所谓非对称加密算法是指（1）乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。（2）甲方获取乙方的公钥，然后用它对信息加密。（3）乙方得到加密后的信息，用私钥解密。那么关于公钥和私钥是什么关系呢？乙方又是如何用私钥去解密甲方发过来的信息呢？</p>
 <h1 id="RSA算法实现"><a href="#RSA算法实现" class="headerlink" title="RSA算法实现"></a>RSA算法实现</h1><ol>
 <li>随意选择两个大的质数p和q，p不等于q，计算N=pq。</li>

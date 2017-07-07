@@ -882,30 +882,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h1 id="RSA算法"><a href="#RSA算法" class="headerlink" title="RSA算法"></a>RSA算法</h1><p>RSA算法是一种非对称加密算法，所谓非对称加密算法是指（1）乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。（2）甲方获取乙方的公钥，然后用它对信息加密。（3）乙方得到加密后的信息，用私钥解密。那么关于公钥和私钥是什么关系呢？乙方又是如何用私钥去解密甲方发过来的信息呢？</p>
-<h1 id="RSA算法实现"><a href="#RSA算法实现" class="headerlink" title="RSA算法实现"></a>RSA算法实现</h1><ol>
-<li>随意选择两个大的质数p和q，p不等于q，计算N=pq。</li>
-<li>根据欧拉函数，不大于N且与N互质的整数个数为f(n)=(p-1)(q-1)</li>
-<li>选择一个整数e与f(n)互质，并且e小于f(n)</li>
-<li>用以下这个公式计算d：d × e ≡ 1 (mod f(n))</li>
-<li>将p和q的记录销毁。</li>
-</ol>
-<p>整个过程中一共出现了6个参数p q N f(n) e d，最后我们将（n,e）封装成公钥，（n,d）封装成私钥。</p>
-<h1 id="加密解密流程"><a href="#加密解密流程" class="headerlink" title="加密解密流程"></a>加密解密流程</h1><h2 id="公钥加密"><a href="#公钥加密" class="headerlink" title="公钥加密"></a>公钥加密</h2><p>对数字m加密（m可以是unicode，这样就可以解析信息），需要用到公钥（n,e）。</p>
-<p>$$m^e ≡ c (mod n)$$</p>
-<p>即</p>
-<p>$$c = m^e mod n$$</p>
-<p>将c发送给接收方。</p>
-<h2 id="私钥解密"><a href="#私钥解密" class="headerlink" title="私钥解密"></a>私钥解密</h2><p>$$c^d ≡ m (mod n)$$</p>
-<p>即</p>
-<p>$$m = c^d mod n$$</p>
-<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>将上两个式子联立，得到$$m = (m^{ed}) mod n$$</p>
-<p>证明该式可以按照<a href="http://www.ruanyifeng.com/blog/2013/07/rsa_algorithm_part_two.html" target="_blank" rel="external">证明</a>进行。</p>
-<h1 id="破解难度"><a href="#破解难度" class="headerlink" title="破解难度"></a>破解难度</h1><p>实际上RSA是可以被破解的，只是在破解的流程中需要做因数分解，目前计算机的性能做大数的因数分解还很困难，所以我们认为当选择足够大的数作为公钥和私钥后，RSA加密就是安全的。</p>
-
-          
+          <p>RSA加密算法的原理。</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/24/20161224-RSA加密的数学原理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
