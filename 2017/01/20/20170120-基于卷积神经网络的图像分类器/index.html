@@ -90,10 +90,16 @@
 <meta property="og:url" content="http://xuzm.space/2017/01/20/20170120-基于卷积神经网络的图像分类器/index.html">
 <meta property="og:site_name" content="xuzm's Blog">
 <meta property="og:description" content="文章记录了基于卷积神经网络、使用keras框架的实现图片分类器，可以针对黄瓜叶片的病虫害情况做出诊断。">
-<meta property="og:updated_time" content="2017-07-07T07:47:15.537Z">
+<meta property="og:image" content="http://oiufljwqw.bkt.clouddn.com/blog/20170120/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0.jpg">
+<meta property="og:image" content="http://oiufljwqw.bkt.clouddn.com/blog/20170120/%E5%B1%80%E9%83%A8%E8%BF%9E%E6%8E%A5.jpg">
+<meta property="og:image" content="http://oiufljwqw.bkt.clouddn.com/blog/20170120/%E6%9D%83%E5%80%BC%E5%85%B1%E4%BA%AB.jpg">
+<meta property="og:image" content="http://oiufljwqw.bkt.clouddn.com/blog/20170120/%E7%BD%91%E7%BB%9C.jpg">
+<meta property="og:image" content="http://oiufljwqw.bkt.clouddn.com/blog/20170120/result.jpg">
+<meta property="og:updated_time" content="2017-07-09T09:40:46.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于卷积神经网络的图像分类器">
 <meta name="twitter:description" content="文章记录了基于卷积神经网络、使用keras框架的实现图片分类器，可以针对黄瓜叶片的病虫害情况做出诊断。">
+<meta name="twitter:image" content="http://oiufljwqw.bkt.clouddn.com/blog/20170120/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0.jpg">
 
 
 
@@ -347,10 +353,137 @@
       
         <p>文章记录了基于卷积神经网络、使用keras框架的实现图片分类器，可以针对黄瓜叶片的病虫害情况做出诊断。</p>
 <a id="more"></a>
-<h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p>这一节主要介绍神经网络的相关概念和反向传输过程。</p>
+<h1 id="人工神经网络"><a href="#人工神经网络" class="headerlink" title="人工神经网络"></a>人工神经网络</h1><p>这一节主要介绍神经网络的相关概念和反向传输过程。</p>
+<p>在wiki中人工神经网络（英文：artificial neural network，缩写ANN），简称神经网络（英文：neural network，缩写NN）的定义是一种模仿生物神经网络(动物的中枢神经系统，特别是大脑)的结构和功能的数学模型或计算模型，用于对函数进行估计或近似。神经网络由大量的人工神经元联结进行计算。大多数情况下人工神经网络能在外界信息的基础上改变内部结构，是一种自适应系统。[来源请求]现代神经网络是一种非线性统计性数据建模工具。典型的神经网络具有以下三个部分：</p>
+<ul>
+<li><p>结构 （Architecture） 结构指定了网络中的变量和它们的拓扑关系。例如，神经网络中的变量可以是神经元连接的权重（weights）和神经元的激励值（activities of the neurons）。</p>
+</li>
+<li><p>激励函数（Activity Rule） 大部分神经网络模型具有一个短时间尺度的动力学规则，来定义神经元如何根据其他神经元的活动来改变自己的激励值。一般激励函数依赖于网络中的权重（即该网络的参数）。</p>
+</li>
+<li><p>学习规则（Learning Rule）学习规则指定了网络中的权重如何随着时间推进而调整。这一般被看做是一种长时间尺度的动力学规则。一般情况下，学习规则依赖于神经元的激励值。它也可能依赖于监督者提供的目标值和当前权重的值。</p>
+</li>
+</ul>
+<p>例如，用于手写识别的一个神经网络，有一组输入神经元。输入神经元会被输入图像的数据所激发。在激励值被加权并通过一个函数（由网络的设计者确定）后，这些神经元的激励值被传递到其他神经元。这个过程不断重复，直到输出神经元被激发。最后，输出神经元的激励值决定了识别出来的是哪个字母。</p>
+<p>简单来说，就是对于输入的信号，进行一系列函数运算，得到一系列参数，得以判定该输入的某种属性。在训练人工神经网络时，将这一系列参数反馈回去，修正整个系统的参数，努力获得更好的识别度。</p>
 <h1 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h1><p>这一节主要在神经网络的基础上介绍卷积神经网络。</p>
-<h1 id="keras框架"><a href="#keras框架" class="headerlink" title="keras框架"></a>keras框架</h1><p>这一节主要介绍keras框架和。</p>
-<h1 id="图片分类器"><a href="#图片分类器" class="headerlink" title="图片分类器"></a>图片分类器</h1><p>这一节主要介绍分类器的实现。</p>
+<p>卷积神经网络（Convolutional Neural Network, CNN）是一种前馈神经网络，它的人工神经元可以响应一部分覆盖范围内的周围单元，对于大型图像处理有出色表现。</p>
+<h2 id="一些基本概念"><a href="#一些基本概念" class="headerlink" title="一些基本概念"></a>一些基本概念</h2><h3 id="图像的卷积"><a href="#图像的卷积" class="headerlink" title="图像的卷积"></a>图像的卷积</h3><p>对于图像来说，卷积等同于加权和。</p>
+<h3 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h3><p>激活函数是一种非线性函数，它在为模型提供非线性特征的同时，将网络各层的输出限定在一个固定区间内。常用的激活函数有以下几种：</p>
+<p><img src="http://oiufljwqw.bkt.clouddn.com/blog/20170120/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0.jpg" alt="激活函数-1"></p>
+<p>其中ReLU函数具有牺牲一定过拟合性能以快速收敛的特点。</p>
+<h3 id="成本函数"><a href="#成本函数" class="headerlink" title="成本函数"></a>成本函数</h3><p>成本函数是用于衡量模型输出Y和目标输出T之间误差的函数。其常见的形式有均方误差，绝对误差，0-1误差等等，其中均方误差最为常见。</p>
+<p>在训练模型的过程中，我们的目的是得到一组模型的参数集W使得对一组输入训练集数据的平均成本参数最小，当然，相比训练集的结果，在实际中我们更关注测试集的平均成本函数。</p>
+<h3 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h3><p>损失函数是一种基于成本函数的模型参数的评估方法。使用损失函数可以帮助模型更好的寻找最优的参数集W，因此，学习的过程就转变为寻找可以使损失函数减小的模型参数集W。</p>
+<h4 id="logistic"><a href="#logistic" class="headerlink" title="logistic"></a>logistic</h4><p>对于二分类问题，通常采用的回归模型是logistic，对于多分类则采用它的推广回归模型softmax。</p>
+<h3 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h3><p>反向传播（Backpropagation，BP））是“误差反向传播”的简称，是一种与最优化方法（如梯度下降法）结合使用的，用来训练人工神经网络的常见方法。该方法计算对网络中所有权重计算损失函数的梯度。这个梯度会反馈给最优化方法，用来更新权值以最小化损失函数。</p>
+<p>反向传播要求有对每个输入值想得到的已知输出，来计算损失函数梯度。因此，它通常被认为是一种监督式学习方法，虽然它也用在一些无监督网络（如自动编码器）中。它是多层前馈网络的Delta规则的推广，可以用链式法则对每层迭代计算梯度。</p>
+<h3 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h3><p>卷积神经网络在第一次使用卷积核提取特定的边缘特征，之后更高层次的卷积核在这些特征中有提取更抽象的特征，并且忽略了特征的具体位置，具有良好的特征旋转平移性。</p>
+<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><ul>
+<li><p>局部感知（卷积）：减少运算量，使计算结果成为可能事件。</p>
+</li>
+<li><p>权值共享：自动提取特征，免去图像预处理过程。</p>
+</li>
+</ul>
+<h3 id="局部连接"><a href="#局部连接" class="headerlink" title="局部连接"></a>局部连接</h3><p>下图是一个很经典的图示，左边是全连接，右边是局部连接。</p>
+<p><img src="http://oiufljwqw.bkt.clouddn.com/blog/20170120/%E5%B1%80%E9%83%A8%E8%BF%9E%E6%8E%A5.jpg" alt="局部连接-1"></p>
+<p>对于一个1000 × 1000的输入图像而言，如果下一个隐藏层的神经元数目为10^6个，采用全连接则有1000 × 1000 × 10^6 = 10^12个权值参数，如此数目巨大的参数几乎难以训练；而采用局部连接，隐藏层的每个神经元仅与图像中10 × 10的局部图像相连接，那么此时的权值参数数量为10 × 10 × 10^6 = 10^8，将直接减少4个数量级。</p>
+<h3 id="权值共享"><a href="#权值共享" class="headerlink" title="权值共享"></a>权值共享</h3><p>可以将权值共享理解成一种特征提取，其隐含思想是图像的一部分特征与全局是相互关联的，所以对于图像的所有位置都可用来作为特征学习。</p>
+<p><img src="http://oiufljwqw.bkt.clouddn.com/blog/20170120/%E6%9D%83%E5%80%BC%E5%85%B1%E4%BA%AB.jpg" alt="权值共享-1"></p>
+<p>卷积神经网络以其局部权值共享的特殊结构在语音识别和图像处理方面有着独特的优越性，其布局更接近于实际的生物神经网络，权值共享降低了网络的复杂性，特别是多维输入向量的图像可以直接输入网络这一特点避免了特征提取和分类过程中数据重建的复杂度。</p>
+<h3 id="池化"><a href="#池化" class="headerlink" title="池化"></a>池化</h3><p>池化的目的是减少过拟合，同时也降低了数据量。简单来说，就是采用某一区域的最大值/最小值/平均值作为该区域的代表。</p>
+<h1 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h1><h2 id="卷积层"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层</h2><p>卷积层（Convolutional layer），卷积神经网络中每层卷积层由若干卷积单元组成，每个卷积单元的参数都是通过反向传播算法优化得到的。卷积运算的目的是提取输入的不同特征，第一层卷积层可能只能提取一些低级的特征如边缘、线条和角等层级，更多层的网络能从低级特征中迭代提取更复杂的特征。</p>
+<h2 id="池化层"><a href="#池化层" class="headerlink" title="池化层"></a>池化层</h2><p>池化（Pooling）是卷积神经网络中另一个重要的概念，它实际上一种形式的向下采样。有多种不同形式的非线性池化函数，而其中“最大池化（Max pooling）”是最为常见的。它是将输入的图像划分为若干个矩形区域，对每个子区域输出最大值。直觉上，这种机制能够有效地原因在于，在发现一个特征之后，它的精确位置远不及它和其他特征的相对位置的关系重要。池化层会不断地减小数据的空间大小，因此参数的数量和计算量也会下降，这在一定程度上也控制了过拟合。通常来说，CNN的卷积层之间都会周期性地插入池化层。</p>
+<p>池化层通常会分别作用于每个输入的特征并减小其大小。目前最常用形式的池化层是每隔2个元素从图像划分出2 × 2的区块，然后对每个区块中的4个数取最大值。这将会减少75%的数据量。<br>除了最大池化之外，池化层也可以使用其他池化函数，例如“平均池化”甚至“L2-范数池化”等。过去，平均池化的使用曾经较为广泛，但是最近由于最大池化在实践中的表现更好，平均池化已经不太常用。</p>
+<p>由于池化层过快地减少了数据的大小，目前文献中的趋势是使用较小的池化滤镜，甚至不再使用池化层。通过卷积层获得了图像的特征之后，理论上我们可以直接使用这些特征训练分类器（如softmax），但是这样做将面临巨大的计算量的挑战，而且容易产生过拟合的现象。为了进一步降低网络训练参数及模型的过拟合程度，我们对卷积层进行池化/采样(Pooling)处理。池化/采样的方式通常有以下两种：</p>
+<ul>
+<li>Max-Pooling: 选择Pooling窗口中的最大值作为采样值；</li>
+<li>Mean-Pooling: 将Pooling窗口中的所有值相加取平均，以平均值作为采样值；</li>
+</ul>
+<h2 id="全连接层"><a href="#全连接层" class="headerlink" title="全连接层"></a>全连接层</h2><p>全连接层的每一个结点都与上一层的所有结点相连，用来把前边提取到的特征综合起来。由于其全相连的特性，一般全连接层的参数也是最多的。</p>
+<h1 id="训练方式"><a href="#训练方式" class="headerlink" title="训练方式"></a>训练方式</h1><h2 id="有监督的训练"><a href="#有监督的训练" class="headerlink" title="有监督的训练"></a>有监督的训练</h2><p>有监督的训练是用训练样本（输入对象）的得到输出作为一个监督信号，反向传播学习到一个映射函数。</p>
+<h2 id="无监督的训练"><a href="#无监督的训练" class="headerlink" title="无监督的训练"></a>无监督的训练</h2><p>无监督学习里典型的例子就是聚类了。聚类的目的在于把相似的东西聚在一起，而我们并不关心这一类是什么。因此，一个聚类算法通常只需要知道如何计算相似度就可以开始工作了。</p>
+<h2 id="有监督无监督相结合的训练结合"><a href="#有监督无监督相结合的训练结合" class="headerlink" title="有监督无监督相结合的训练结合"></a>有监督无监督相结合的训练结合</h2><p>半监督学习问题从样本的角度而言是利用少量标注样本和大量未标注样本进行机器学习，从概率学习角度可理解为研究如何利用训练样本的输入边缘概率 P( x )和条件输出概率P ( y | x )的联系设计具有良好性能的分类器。这种联系的存在是建立在某些假设的基础上的，即聚类假设(cluster  assumption)和流形假设(maniford assumption)。</p>
+<h1 id="网络设计"><a href="#网络设计" class="headerlink" title="网络设计"></a>网络设计</h1><table>
+<thead>
+<tr>
+<th>开源库</th>
+<th>Keras</th>
+<th>Caffe</th>
+<th>TensorFlow-slim</th>
+<th>DeepLearningToolBox</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>运行平台</td>
+<td>unix/win</td>
+<td>unix/win</td>
+<td>unix/win(py3.5)</td>
+<td>unix/win</td>
+</tr>
+<tr>
+<td>运行环境</td>
+<td>Py2.7/Py3.5</td>
+<td>Py/Matlab</td>
+<td>Py2.7</td>
+<td>matlab</td>
+</tr>
+<tr>
+<td>科学计算库</td>
+<td>Theano/TensorFlow</td>
+<td>caffe</td>
+<td>TensorFlow</td>
+<td>matlab</td>
+</tr>
+<tr>
+<td>备注</td>
+<td>接口(API)快速实现</td>
+<td>包含深度学习全部流程</td>
+<td>Win下py版本不匹配</td>
+<td>无接口（API），停止更新</td>
+</tr>
+</tbody>
+</table>
+<h2 id="keras框架"><a href="#keras框架" class="headerlink" title="keras框架"></a>keras框架</h2><p>根据官方的介绍：Keras是一个高层神经网络库，Keras由纯Python编写而成并基Tensorflow或Theano。Keras为支持快速实验而生，能够把你的idea迅速转换为结果，如果你有如下需求，请选择Keras：</p>
+<ul>
+<li>简易和快速的原型设计（keras具有高度模块化，极简，和可扩充特性）</li>
+<li>支持CNN和RNN，或二者的结合</li>
+<li>支持任意的链接方案（包括多输入和多输出训练）</li>
+<li>无缝CPU和GPU切换</li>
+</ul>
+<p>Keras的设计原则:</p>
+<ul>
+<li>模块性：模型可理解为一个独立的序列或图，完全可配置的模块以最少的代价自由组合在一起。具体而言，网络层、损失函数、优化器、初始化策略、激活函数、正则化方法都是独立的模块，你可以使用它们来构建自己的模型。</li>
+<li>极简主义：每个模块都应该尽量的简洁。每一段代码都应该在初次阅读时都显得直观易懂。没有黑魔法，因为它将给迭代和创新带来麻烦。</li>
+<li>易扩展性：添加新模块超级简单的容易，只需要仿照现有的模块编写新的类或函数即可。创建新模块的便利性使得Keras更适合于先进的研究工作。</li>
+<li>与Python协作：Keras没有单独的模型配置文件类型（作为对比，caffe有），模型由python代码描述，使其更紧凑和更易debug，并提供了扩展的便利性。</li>
+</ul>
+<h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p>Sequential顺序模型（Sequential）</p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><pre><code>Add添加各层的控制参数
+Compile 根据参数编译学习过程
+fit_generator
+fit_generator(self, generator, samples_per_epoch, nb_epoch, verbose=1, callbacks=[], validation_data=None, nb_val_samples=None, class_weight=None, max_q_size=10)利用Python的生成器，逐个生成数据的batch并进行训练。生成器与模型将并行执行以提高效率。例如，该函数允许我们在CPU上进行实时的数据提升，同时在GPU上进行模型训练
+</code></pre><h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><p><img src="http://oiufljwqw.bkt.clouddn.com/blog/20170120/%E7%BD%91%E7%BB%9C.jpg" alt="网络-1"></p>
+<p>输入-&gt;32个3×3卷积核-&gt;relu激励层-&gt;2×2池化层-&gt;32个3×3卷积核-&gt;relu激励层-&gt;2×2池化层-&gt;64个3×3卷积核-&gt;relu激励层-&gt;2×2池化层-&gt;数据一维化-&gt;64全连接层-&gt;relu激励层-&gt;0.5%神经元过拟合保护-&gt;1全连接层-&gt;sigmoid激励层-&gt;输出</p>
+<h2 id="IO接口设计"><a href="#IO接口设计" class="headerlink" title="IO接口设计"></a>IO接口设计</h2><p>Python运行完后会给出输出图片的分类0..n，labview程序从中读取分类并反馈给环境检测仪，当然，这是另一部分的内容了。</p>
+<h1 id="图片分类器"><a href="#图片分类器" class="headerlink" title="图片分类器"></a>图片分类器</h1><p>这一节主要介绍黄瓜病虫害情况分类器的实现。</p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><h3 id="python-2-7和Keras"><a href="#python-2-7和Keras" class="headerlink" title="python 2.7和Keras"></a>python 2.7和Keras</h3><p>本文采用了Anaconda2-4.4.0-Windows-x86_64在win10平台下安装python。虽说在安装过程中勾选了add path，但是实际上还是需要手动添加python的环境变量，包括3个路径：</p>
+<pre><code>C:\ProgramData\Anaconda2;
+C:\ProgramData\Anaconda2\Scripts;
+C:\ProgramData\Anaconda2\Library\bin;
+</code></pre><p>为了之后conda install的正常使用，需要在windows的文件属性里给Anaconda2文件夹User用户的完全控制权限，再运行以下代码安装theano的g++环境。</p>
+<pre><code>conda install m2w64-toolchain
+conda install mingw
+conda install mingw libpython
+</code></pre><p>keras的安装可以遵循官网的文档，如果不使用显卡加速，仅CPU的Keras版本可以直接用以下命令安装。顺带一提，Keras现在已经是Google-TF的官方API了，感觉很强。</p>
+<pre><code>pip install keras
+</code></pre><p>在运行过至少一次Keras后，可以在<code>C:\Users\Administrator\.keras</code>里的keras.json修改backend，默认是TF，本文改成了theano。</p>
+<p>IDE可以选择JetBrains全家桶里的PyCharm，社区版就可以。</p>
+<p>###</p>
+<p>实现可以参考官方给出的<a href="http://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html" target="_blank" rel="external">样例</a>，建议去看英文版，中文版更新有滞后。</p>
+<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p>由于数据量比较小，所以我们将黄瓜叶片图像分成了：健康叶片训练集40张，病虫害叶片训练集40张；健康叶片验证集10张，病虫害叶片验证集10张。</p>
+<p><img src="http://oiufljwqw.bkt.clouddn.com/blog/20170120/result.jpg" alt="运行结果-1"></p>
+<p>在经过50次训练后，基本可以达到在训练集85%，验证集75%以上的识别率，随着样本数据的增加和训练次数的提升，相信结果会得到进一步的改善。</p>
 
       
     </div>
@@ -535,7 +668,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络"><span class="nav-number">1.</span> <span class="nav-text">神经网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卷积神经网络"><span class="nav-number">2.</span> <span class="nav-text">卷积神经网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#keras框架"><span class="nav-number">3.</span> <span class="nav-text">keras框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片分类器"><span class="nav-number">4.</span> <span class="nav-text">图片分类器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#人工神经网络"><span class="nav-number">1.</span> <span class="nav-text">人工神经网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卷积神经网络"><span class="nav-number">2.</span> <span class="nav-text">卷积神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些基本概念"><span class="nav-number">2.1.</span> <span class="nav-text">一些基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图像的卷积"><span class="nav-number">2.1.1.</span> <span class="nav-text">图像的卷积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#激活函数"><span class="nav-number">2.1.2.</span> <span class="nav-text">激活函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成本函数"><span class="nav-number">2.1.3.</span> <span class="nav-text">成本函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#损失函数"><span class="nav-number">2.1.4.</span> <span class="nav-text">损失函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#logistic"><span class="nav-number">2.1.4.1.</span> <span class="nav-text">logistic</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向传播"><span class="nav-number">2.1.5.</span> <span class="nav-text">反向传播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征提取"><span class="nav-number">2.1.6.</span> <span class="nav-text">特征提取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本思想"><span class="nav-number">2.2.</span> <span class="nav-text">基本思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#局部连接"><span class="nav-number">2.2.1.</span> <span class="nav-text">局部连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权值共享"><span class="nav-number">2.2.2.</span> <span class="nav-text">权值共享</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#池化"><span class="nav-number">2.2.3.</span> <span class="nav-text">池化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络结构"><span class="nav-number">3.</span> <span class="nav-text">网络结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积层"><span class="nav-number">3.1.</span> <span class="nav-text">卷积层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#池化层"><span class="nav-number">3.2.</span> <span class="nav-text">池化层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全连接层"><span class="nav-number">3.3.</span> <span class="nav-text">全连接层</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#训练方式"><span class="nav-number">4.</span> <span class="nav-text">训练方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#有监督的训练"><span class="nav-number">4.1.</span> <span class="nav-text">有监督的训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无监督的训练"><span class="nav-number">4.2.</span> <span class="nav-text">无监督的训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有监督无监督相结合的训练结合"><span class="nav-number">4.3.</span> <span class="nav-text">有监督无监督相结合的训练结合</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络设计"><span class="nav-number">5.</span> <span class="nav-text">网络设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#keras框架"><span class="nav-number">5.1.</span> <span class="nav-text">keras框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型"><span class="nav-number">5.1.1.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">5.1.2.</span> <span class="nav-text">函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络"><span class="nav-number">5.2.</span> <span class="nav-text">网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IO接口设计"><span class="nav-number">5.3.</span> <span class="nav-text">IO接口设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片分类器"><span class="nav-number">6.</span> <span class="nav-text">图片分类器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境"><span class="nav-number">6.1.</span> <span class="nav-text">配置环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python-2-7和Keras"><span class="nav-number">6.1.1.</span> <span class="nav-text">python 2.7和Keras</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行结果"><span class="nav-number">6.1.2.</span> <span class="nav-text">运行结果</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
