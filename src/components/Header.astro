@@ -1,0 +1,38 @@
+---
+import { SITE_TITLE } from "../consts";
+---
+
+<header
+	class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/70 dark:bg-zinc-950/70 border-b border-zinc-200 dark:border-zinc-800 transition-colors duration-300"
+>
+	<nav class="flex items-center justify-between max-w-4xl mx-auto px-4 py-4">
+		<a
+			href="/"
+			class="text-xl font-bold tracking-tighter hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+		>
+			{SITE_TITLE}
+		</a>
+		<div class="flex items-center gap-6 text-sm font-medium">
+			<a
+				href="/"
+				class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+				>Home</a
+			>
+			<a
+				href="/archives"
+				class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+				>Archives</a
+			>
+			<a
+				href="/tags"
+				class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+				>Tags</a
+			>
+			<a
+				href="/about"
+				class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+				>About</a
+			>
+		</div>
+	</nav>
+</header>
