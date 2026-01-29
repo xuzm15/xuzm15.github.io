@@ -1,10 +1,13 @@
 # build output
 dist/
-# generated types
 .astro/
 
 # dependencies
 node_modules/
+
+# environment & secrets
+.env
+.env.*
 
 # logs
 npm-debug.log*
@@ -12,16 +15,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
-# environment variables
-.env
-.env.production
-
-# macOS-specific files
+# OS & IDE
 .DS_Store
-
-# jetbrains setting folder
 .idea/
-
-# agent-generated analysis (do not commit)
-CLEANUP_ANALYSIS.md
