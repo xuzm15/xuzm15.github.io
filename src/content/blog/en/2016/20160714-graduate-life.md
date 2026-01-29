@@ -15,7 +15,7 @@ After a year, besides courses, most of what I did in the lab was following other
 
 Labs are usually project-driven—you work on what’s funded. That’s understandable, but it can feel like a cage. I imagined research as: get a broad view of the field, find what interests you, build on prior work, and look for something new, big or small, in unexplored corners.
 
-My advisor said early on: unbounded exploration is research thinking; solving problems is engineering thinking. It took me a while to get it. (In practice “unbounded” still has to relate to projects, ha.)
+My advisor said early on: unbounded exploration is research thinking; solving problems is engineering thinking. It took me a while to get it. (In practice "unbounded" still has to relate to projects, ha.)
 
 So the compromise is: if you want to do grad school, try to find a group whose direction matches your interests.
 
@@ -35,7 +35,7 @@ What I want to do next:
 *   Keep up sports and music, and explore aesthetics (photo, PS, PPT, clothes, posters).
 *   Figure out how to be a better programmer and how a slow-handed person can get better at games.
 
-A small aside: I like fantasy novels and sometimes map things to “magic”—the staff (phone), sending messages (WeChat), wind-speed spell (bike, then cars), teleportation (planes, delivery), magic academy (university), adventurer’s guild (company). The only one without a match is the summoning stone with a warlock inside…
+A small aside: I like fantasy novels and sometimes map things to "magic"—the staff (phone), sending messages (WeChat), wind-speed spell (bike, then cars), teleportation (planes, delivery), magic academy (university), adventurer’s guild (company). The only one without a match is the summoning stone with a warlock inside…
 
 That’s it.
 

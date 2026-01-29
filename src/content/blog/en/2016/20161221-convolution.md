@@ -7,7 +7,7 @@ lang: en
 slug: 20161221-convolution
 ---
 
-Source: [Convolution without “convolving”](http://blog.sciencenet.cn/blog-4909-426493.html) (Chinese).
+Source: [Convolution without "convolving"](http://blog.sciencenet.cn/blog-4909-426493.html) (Chinese).
 
 # Convolution
 
@@ -15,11 +15,11 @@ Convolution is defined by:
 
 ∫(-∞,∞) h(t−τ) f(τ) dτ = g(t)
 
-In German math literature (at least since 1903) it appears as Faltung/convolution, with a “folding” meaning. The usual teaching: to get the result at time t, flip h(τ) to h(−τ), shift to h(t−τ), multiply by f(τ), and integrate. That flip is where “convolve” comes from.
+In German math literature (at least since 1903) it appears as Faltung/convolution, with a "folding" meaning. The usual teaching: to get the result at time t, flip h(τ) to h(−τ), shift to h(t−τ), multiply by f(τ), and integrate. That flip is where "convolve" comes from.
 
 # Convolution without flipping
 
-That view is correct mathematically. But in engineering (e.g. signal processing), must the impulse response or input actually be flipped in time? No. So we can use another view: shift h by τ to get h(t−τ), multiply by f(τ), and sum over τ. That’s the superposition view—convolution need not “convolve.”
+That view is correct mathematically. But in engineering (e.g. signal processing), must the impulse response or input actually be flipped in time? No. So we can use another view: shift h by τ to get h(t−τ), multiply by f(τ), and sum over τ. That’s the superposition view—convolution need not "convolve."
 
 (We’re just changing the perspective: before we fixed t and varied τ; now we think of t as variable and τ as the time index. No flip, just a natural superposition.)
 

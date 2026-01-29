@@ -28,7 +28,7 @@ Ubuntu 15.10：配置文件，切换到/etc/shadowsocks/目录下：`sudo gedit 
 *   local\_port本地端端口
 *   password用来加密的密码
 *   timeout超时时间（秒）
-*   method加密方法，可选择“bf-cfb”,“aes-256-cfb”,“des-cfb”,“rc4”,等等。默认是一种不安全的加密，推荐用“aes-256-cfb”。
+*   method加密方法，可选择"bf-cfb","aes-256-cfb","des-cfb","rc4",等等。默认是一种不安全的加密，推荐用"aes-256-cfb"。
 
 保存退出，运行：`sudo sslocal -c /etc/shadowsocks/config.json`
 
