@@ -1,0 +1,108 @@
+---
+title: "Image Classifier with Convolutional Neural Networks"
+description: "CNN-based image classifier for cucumber leaf disease detection using Keras"
+pubDate: 2017-01-20T09:35:17.000Z
+tags: ["CNN", "Keras"]
+lang: en
+slug: 20170120-cnn-classifier
+---
+
+import activationFunctions from '../../../../assets/images/2017/activation_functions.png';
+import localConnectivity from '../../../../assets/images/2017/local_connectivity.png';
+import weightSharing from '../../../../assets/images/2017/weight_sharing.png';
+import cnnArchitecture from '../../../../assets/images/2017/cnn_architecture.png';
+import cucumberResult from '../../../../assets/images/2017/cucumber_result.png';
+import { Image } from 'astro:assets';
+
+This post describes a CNN-based image classifier implemented with Keras for diagnosing cucumber leaf disease.
+
+# Artificial neural networks
+
+A neural network (ANN) is a mathematical model inspired by biological neural systems, used to approximate functions. It consists of many artificial neurons and their connections. Typically it has: (1) **Architecture**—variables (e.g. weights, activations) and their topology; (2) **Activity rule**—how a neuron updates its activation from others (often depending on weights); (3) **Learning rule**—how weights are updated over time (often depending on activations and possibly supervisor targets).
+
+For example, in handwritten-digit recognition, input neurons are driven by the image; activations are weighted and transformed, then passed to other layers until output neurons fire; the output activations indicate the recognized digit. In short: apply a sequence of operations to the input to get parameters that determine some property; during training, feedback is used to adjust the system to improve recognition.
+
+# Convolutional neural networks
+
+A CNN is a feedforward network whose neurons respond to a local receptive field; it works well for large images.
+
+## Concepts
+
+**Convolution for images**: Convolution is a weighted sum over a local patch.
+
+**Activation function**: A nonlinear function that bounds layer outputs. Common choices: sigmoid, tanh, ReLU. ReLU trades some overfitting risk for faster convergence.
+
+<Image src={activationFunctions} alt="Activation functions comparison" />
+
+**Cost function**: Measures error between model output and target (e.g. mean squared error). Training minimizes average cost on the training set; we care more about test-set performance.
+
+**Loss function**: A parameter-dependent measure derived from the cost; optimization minimizes the loss. For binary classification: logistic; for multi-class: softmax.
+
+**Backpropagation**: Computes gradients of the loss with respect to all weights; these gradients are used by an optimizer (e.g. gradient descent) to update weights. It requires known target outputs (supervised learning) and uses the chain rule layer by layer.
+
+**Feature extraction**: Early conv layers extract low-level features (edges, lines); deeper layers extract more abstract features and are more invariant to position.
+
+## Main ideas
+
+*   **Local connectivity (convolution)**: Reduces parameters and computation.
+*   **Weight sharing**: Learns features automatically, avoids hand-crafted preprocessing.
+
+### Local connectivity
+
+<Image src={localConnectivity} alt="Local vs full connectivity" />
+
+For a 1000×1000 image and 10^6 hidden units: full connection → 10^12 weights; local 10×10 patches → 10^8 weights (4 orders of magnitude fewer).
+
+### Weight sharing
+
+<Image src={weightSharing} alt="Weight sharing in CNN" />
+
+The same filter is applied at every position, so the number of parameters is small and the network learns translation-invariant features. This avoids explicit feature engineering.
+
+### Pooling
+
+Pooling reduces overfitting and data size by summarizing a region (max, mean, etc.). Max-pooling is common: take the maximum in each 2×2 window, reducing size by 75%.
+
+# Network structure
+
+**Conv layer**: Each layer has several convolution units; parameters are learned by backprop. Early layers capture edges/lines; deeper layers capture more abstract features.
+
+**Pooling layer**: Downsampling (e.g. 2×2 max-pool). Reduces spatial size and parameters, helps control overfitting. Often inserted periodically between conv layers.
+
+**Fully connected layer**: Every neuron connects to all previous neurons; combines the extracted features. Usually has the most parameters.
+
+# Training
+
+**Supervised**: Use labeled (input, output) pairs; backprop minimizes loss.
+
+**Unsupervised**: e.g. clustering—group similar inputs without labels.
+
+**Semi-supervised**: Combine few labeled and many unlabeled samples (e.g. cluster assumption, manifold assumption).
+
+# Framework (Keras)
+
+Keras is a high-level API on top of TensorFlow or Theano. It is modular, minimal, and supports CNN/RNN, multi-input/output, and CPU/GPU. Design principles: modularity, simplicity, extensibility, Python-native.
+
+**Sequential model**: Add layers, compile (loss, optimizer), then `fit` or `fit_generator` for training.
+
+# Network used
+
+<Image src={cnnArchitecture} alt="CNN architecture" />
+
+Input → 32×3×3 conv → ReLU → 2×2 pool → 32×3×3 conv → ReLU → 2×2 pool → 64×3×3 conv → ReLU → 2×2 pool → flatten → 64 FC → ReLU → dropout 0.5 → 1 FC → sigmoid → output
+
+# Cucumber leaf classifier
+
+## Environment
+
+Python 2.7, Keras. We used Anaconda on Windows 10; add Anaconda and Scripts to PATH. For Theano, install a C++ toolchain (e.g. `conda install m2w64-toolchain`). Install Keras: `pip install keras`. Set backend in `~/.keras/keras.json` (e.g. theano or tensorflow). IDE: PyCharm Community is fine.
+
+## Implementation
+
+See the [official Keras example](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) for small-data image classification.
+
+## Results
+
+Small dataset: 40 healthy + 40 diseased training images; 10 + 10 validation. After 50 epochs: ~85% training accuracy, ~75% validation accuracy. More data and training would likely improve results.
+
+<Image src={cucumberResult} alt="Cucumber disease detection result" />

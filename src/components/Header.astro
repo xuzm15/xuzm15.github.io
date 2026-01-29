@@ -1,5 +1,20 @@
 ---
-import { SITE_TITLE } from "../consts";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { i18n, type Locale } from '../i18n';
+
+interface Props {
+	lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = i18n[lang].nav;
+const homeUrl = getRelativeLocaleUrl(lang, '');
+const archivesUrl = getRelativeLocaleUrl(lang, 'archives');
+const tagsUrl = getRelativeLocaleUrl(lang, 'tags');
+const aboutUrl = getRelativeLocaleUrl(lang, 'about');
+const otherLang = lang === 'zh' ? 'en' : 'zh';
+const pathname = Astro.url.pathname;
+const switchUrl = `/${otherLang}${pathname.slice(lang.length + 1) || '/'}`;
 ---
 
 <header
@@ -7,31 +22,37 @@ import { SITE_TITLE } from "../consts";
 >
 	<nav class="flex items-center justify-between max-w-4xl mx-auto px-4 py-4">
 		<a
-			href="/"
+			href={homeUrl}
 			class="text-xl font-bold tracking-tighter hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
 		>
-			{SITE_TITLE}
+			{i18n[lang].siteTitle}
 		</a>
 		<div class="flex items-center gap-6 text-sm font-medium">
 			<a
-				href="/"
+				href={homeUrl}
 				class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-				>Home</a
+				>{t.home}</a
 			>
 			<a
-				href="/archives"
+				href={archivesUrl}
 				class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-				>Archives</a
+				>{t.archives}</a
 			>
 			<a
-				href="/tags"
+				href={tagsUrl}
 				class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-				>Tags</a
+				>{t.tags}</a
 			>
 			<a
-				href="/about"
+				href={aboutUrl}
 				class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-				>About</a
+				>{t.about}</a
+			>
+			<a
+				href={switchUrl}
+				class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+				title={i18n[lang].pages.langSwitch}
+				>{lang === 'zh' ? 'English' : '中文'}</a
 			>
 		</div>
 	</nav>

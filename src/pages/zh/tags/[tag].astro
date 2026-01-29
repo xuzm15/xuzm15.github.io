@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../../components/FormattedDate.astro';
+import { i18n } from '../../../i18n';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	const zhPosts = posts.filter((p) => p.data.lang === 'zh');
+	const tags = [...new Set(zhPosts.flatMap((p) => p.data.tags || []))];
+
+	return tags.map((tag) => ({
+		params: { tag },
+		props: {
+			posts: zhPosts
+				.filter((p) => p.data.tags?.includes(tag))
+				.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+			tag,
+		},
+	}));
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+const lang = 'zh';
+const t = i18n[lang].pages;
+---
+
+<BaseLayout lang={lang} title={`${t.tagLabel}: ${tag}`}>
+	<div class="mb-8">
+		<h1 class="text-3xl font-bold">
+			{t.tagLabel}: <span class="text-blue-600 dark:text-blue-400">#{tag}</span>
+		</h1>
+	</div>
+	<ul class="space-y-6">
+		{
+			posts.map((post) => (
+				<li class="group border-b border-zinc-100 dark:border-zinc-800 pb-8 last:border-0">
+					<a href={`/zh/blog/${post.data.slug}/`} class="block">
+						<h2 class="text-2xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+							{post.data.title}
+						</h2>
+						<div class="flex flex-wrap gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+							<FormattedDate date={post.data.pubDate} />
+						</div>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</BaseLayout>

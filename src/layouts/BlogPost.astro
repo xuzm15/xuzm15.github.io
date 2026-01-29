@@ -1,15 +1,21 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import BaseLayout from "./BaseLayout.astro";
-import FormattedDate from "../components/FormattedDate.astro";
-import { Image } from "astro:assets";
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../i18n';
+import BaseLayout from './BaseLayout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { Image } from 'astro:assets';
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<'blog'>['data'] & {
+	lang: Locale;
+	otherLangUrl?: string;
+	otherLangLabel?: string;
+	lastUpdatedLabel?: string;
+};
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, lang, otherLangUrl, otherLangLabel, lastUpdatedLabel } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} lang={lang}>
 	<article class="prose dark:prose-invert lg:prose-lg mx-auto py-8">
 		<div class="hero-image mb-8">
 			{
@@ -25,15 +31,23 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 		</div>
 		<div class="title text-center mb-12">
-			<div class="date text-zinc-500 dark:text-zinc-400 mb-2">
+			<div class="date text-zinc-500 dark:text-zinc-400 mb-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
 				<FormattedDate date={pubDate} />
 				{
-					updatedDate && (
+					updatedDate && lastUpdatedLabel && (
 						<div class="last-updated-on italic text-sm">
-							Last updated on <FormattedDate date={updatedDate} />
+							{lastUpdatedLabel} <FormattedDate date={updatedDate} />
 						</div>
 					)
 				}
+				{otherLangUrl && otherLangLabel && (
+					<a
+						href={otherLangUrl}
+						class="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+					>
+						{otherLangLabel}
+					</a>
+				)}
 			</div>
 			<h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
 				{title}

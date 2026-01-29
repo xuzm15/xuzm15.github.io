@@ -1,16 +1,22 @@
 import { getCollection } from 'astro:content';
 import rss from '@astrojs/rss';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { i18n } from '../i18n';
 
+/** Default locale RSS at /rss.xml (Chinese feed). */
 export async function GET(context) {
-	const posts = await getCollection('blog');
+	const posts = (await getCollection('blog'))
+		.filter((p) => p.data.lang === 'zh')
+		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+	const t = i18n.zh;
 	return rss({
-		title: SITE_TITLE,
-		description: SITE_DESCRIPTION,
+		title: t.siteTitle,
+		description: t.siteDescription,
 		site: context.site,
 		items: posts.map((post) => ({
-			...post.data,
-			link: `/blog/${post.id}/`,
+			title: post.data.title,
+			description: post.data.description,
+			pubDate: post.data.pubDate,
+			link: `/zh/blog/${post.data.slug}/`,
 		})),
 	});
 }

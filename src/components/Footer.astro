@@ -1,5 +1,15 @@
 ---
+import type { Locale } from '../i18n';
+import { i18n } from '../i18n';
+
+interface Props {
+	lang: Locale;
+}
+
+const { lang } = Astro.props;
 const today = new Date();
+const t = i18n[lang].footer;
+const rssHref = `/${lang}/rss.xml`;
 ---
 
 <footer
@@ -8,20 +18,21 @@ const today = new Date();
 	<div
 		class="max-w-4xl mx-auto px-4 text-center text-zinc-500 dark:text-zinc-400 text-sm"
 	>
-		&copy; {today.getFullYear()} xuzm. All rights reserved.
+		&copy; {today.getFullYear()} xuzm. {t.copyright}.
 		<div class="mt-4 flex justify-center gap-4">
 			<a
 				href="https://github.com/xuzm15"
 				target="_blank"
+				rel="noopener noreferrer"
 				class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
 			>
-				GitHub
+				{t.github}
 			</a>
 			<a
-				href="/rss.xml"
+				href={rssHref}
 				class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
 			>
-				RSS
+				{t.rss}
 			</a>
 		</div>
 	</div>

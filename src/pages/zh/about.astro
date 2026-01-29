@@ -1,10 +1,14 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { i18n } from '../../i18n';
+
+const lang = 'zh';
+const t = i18n[lang].pages;
 ---
 
-<BaseLayout title="About Me" description="About xuzm">
+<BaseLayout lang={lang} title={t.aboutTitle} description={t.about}>
 	<article class="prose dark:prose-invert lg:prose-lg mx-auto">
-		<h1>关于我</h1>
+		<h1>{t.aboutTitle}</h1>
 		<p>博主系河东人士，曾求学于蜀中，现于东北读研，欲往江南烟雨中去。</p>
 		<p>
 			作为一个尝试主义者，在好奇心的驱使下总是在努力敲新世界的大门，但大多浅尝辄止，常年不务“正业”，耽于搞事。

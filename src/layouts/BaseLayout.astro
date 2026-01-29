@@ -2,28 +2,32 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { i18n, type Locale } from "../i18n";
 
 interface Props {
-    title?: string;
-    description?: string;
+	title?: string;
+	description?: string;
+	lang: Locale;
 }
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+const { title, description, lang } = Astro.props;
+const t = i18n[lang];
+const pageTitle = title ?? t.siteTitle;
+const pageDescription = description ?? t.siteDescription;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
-    <head>
-        <BaseHead title={title} description={description} />
-    </head>
-    <body
-        class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased min-h-screen flex flex-col"
-    >
-        <Header />
-        <main class="flex-grow w-full max-w-4xl mx-auto px-4 py-8">
-            <slot />
-        </main>
-        <Footer />
-    </body>
+<html lang={lang} class="scroll-smooth">
+	<head>
+		<BaseHead title={pageTitle} description={pageDescription} />
+	</head>
+	<body
+		class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased min-h-screen flex flex-col"
+	>
+		<Header lang={lang} />
+		<main class="flex-grow w-full max-w-4xl mx-auto px-4 py-8">
+			<slot />
+		</main>
+		<Footer lang={lang} />
+	</body>
 </html>

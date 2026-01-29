@@ -1,0 +1,32 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import BlogPost from '../../../layouts/BlogPost.astro';
+import { i18n } from '../../../i18n';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	const zhPosts = posts.filter((p) => p.data.lang === 'zh');
+	return zhPosts.map((post) => ({
+		params: { slug: post.data.slug },
+		props: { post, otherLangSlug: post.data.slug },
+	}));
+}
+
+type Props = { post: CollectionEntry<'blog'>; otherLangSlug: string };
+
+const { post, otherLangSlug } = Astro.props;
+const { Content } = await render(post);
+const lang = 'zh';
+const otherLangUrl = `/en/blog/${otherLangSlug}/`;
+const t = i18n[lang].pages;
+---
+
+<BlogPost
+	{...post.data}
+	lang={lang}
+	otherLangUrl={otherLangUrl}
+	otherLangLabel="English"
+	lastUpdatedLabel={t.lastUpdatedOn}
+>
+	<Content />
+</BlogPost>

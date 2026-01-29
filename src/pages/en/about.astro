@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { i18n } from '../../i18n';
+
+const lang = 'en';
+const t = i18n[lang].pages;
+---
+
+<BaseLayout lang={lang} title={t.aboutTitle} description={t.about}>
+	<article class="prose dark:prose-invert lg:prose-lg mx-auto">
+		<h1>{t.aboutTitle}</h1>
+		<p>I'm from Hedong, studied in Sichuan, now doing graduate studies in Northeast China, and looking forward to the misty south.</p>
+		<p>
+			As a trialist, driven by curiosity I keep knocking on new doors, but often only scratch the surface. I'm often "off-task" and absorbed in side projects.
+		</p>
+
+		<h3>Skills</h3>
+		<p>Roughly 10% EE + 10% CS + 10% debate + 70% hobbies.</p>
+		<ul>
+			<li>
+				<strong>EE</strong>: Embedded software and hardware, a bit of communications—all a bit rough; I'd say the real takeaway is that learning is an experience.
+			</li>
+			<li><strong>CS</strong>: OI, Java Web, and image processing.</li>
+			<li>
+				<strong>Debate</strong>: Not the most eloquent, but I led the university debate team for a year and traveled to various universities in Sichuan and Chongqing.
+			</li>
+		</ul>
+
+		<h3>Hobbies</h3>
+		<p>Hobbies came naturally; ACG in all directions.</p>
+		<ul>
+			<li>
+				Elementary school: wuxia novels. After going online in fourth or fifth grade I switched to light novels and anime; now I'm deep in J-dramas.
+			</li>
+			<li>
+				<strong>Games</strong>: LoL since S1 (didn't hit 30 until S3); Dota casual with a proud record of "couldn't even dominate in high-school lab LAN"; WoW—mage in the 70s, top mage in the guild in early 85s (because I was the only mage), then AFK after undergrad; love story-driven single-player and am a devoted cheat-user, nicknamed "can't play without cheats."
+			</li>
+		</ul>
+
+		<h3>Other</h3>
+		<ul>
+			<li>Before high school I was less a foodie than a bottomless pit; after undergrad and eating around, my stomach shrank and my taste got pickier.</li>
+			<li>Trying to be funny online; still not famous after all these years.</li>
+			<li>My shopping taste is often called "girly"—but don't you think the stuff I buy is really cute?</li>
+			<li>Want to adopt a cat named A-xiao; for now I cloud-cat on Weibo and covet Guo Site's Fox and Mantou.</li>
+		</ul>
+		<p>I'll add more when I think of it. That's all for now.</p>
+	</article>
+</BaseLayout>

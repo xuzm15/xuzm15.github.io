@@ -8,4 +8,11 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	site: 'https://xuzm15.github.io',
 	integrations: [mdx(), sitemap(), tailwind()],
+	i18n: {
+		defaultLocale: 'zh',
+		locales: ['zh', 'en'],
+		routing: {
+			prefixDefaultLocale: true,
+		},
+	},
 });

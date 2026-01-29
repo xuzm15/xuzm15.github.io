@@ -1,41 +1,18 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
-import FormattedDate from "../components/FormattedDate.astro";
-
-const posts = (await getCollection("blog")).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+// Redirect root to default locale (zh).
 ---
-
-<BaseLayout>
-	<section>
-		<h1 class="text-3xl font-bold mb-8">Latest Posts</h1>
-		<ul class="space-y-6">
-			{
-				posts.map((post) => (
-					<li class="group border-b border-zinc-100 dark:border-zinc-800 pb-8 last:border-0">
-						<a href={`/blog/${post.id}/`} class="block">
-							<h2 class="text-2xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-								{post.data.title}
-							</h2>
-							<div class="flex items-center gap-4 text-sm text-zinc-500 dark:text-zinc-400 mb-3">
-								<FormattedDate date={post.data.pubDate} />
-								{post.data.tags &&
-									post.data.tags.length > 0 && (
-										<div class="flex gap-2">
-											{post.data.tags.map((tag) => (
-												<span class="text-xs bg-zinc-100 dark:bg-zinc-800 px-2 py-1 rounded-md">
-													#{tag}
-												</span>
-											))}
-										</div>
-									)}
-							</div>
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</section>
-</BaseLayout>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="refresh" content="0;url=/zh/" />
+		<link rel="canonical" href="/zh/" />
+		<title>Redirecting...</title>
+	</head>
+	<body>
+		<p>Redirecting to <a href="/zh/">/zh/</a>...</p>
+		<script>
+			window.location.replace('/zh/');
+		</script>
+	</body>
+</html>
