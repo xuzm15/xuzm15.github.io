@@ -1,62 +1,57 @@
-# Astro Starter Kit: Blog
+# xuzm15's Blog
 
-```sh
-npm create astro@latest -- --template blog
+个人博客，基于 [Astro](https://astro.build) 构建，部署在 GitHub Pages。
+
+- 站点：<https://xuzm15.github.io>
+
+## 技术栈
+
+- **Astro 5**：静态站点
+- **Tailwind CSS**：样式与排版（含 `@tailwindcss/typography`）
+- **MDX**：博客内容支持 Markdown + JSX
+- **部署**：GitHub Actions → GitHub Pages
+
+## 功能
+
+- 首页（最新文章列表）
+- 博客列表与文章详情（按 `src/content/blog/` 下的 MD/MDX 生成）
+- 归档页（按时间）
+- 标签页（按 tag）
+- 关于页
+- RSS（`/rss.xml`）
+- Sitemap（`sitemap-index.xml`）
+
+## 本地开发
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+浏览器打开 <http://localhost:4321>。
 
-Features:
+## 常用命令
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+| 命令 | 说明 |
+|------|------|
+| `npm run dev` | 启动本地开发服务器 |
+| `npm run build` | 构建生产版本到 `dist/` |
+| `npm run preview` | 本地预览构建结果 |
 
-## 🚀 Project Structure
+## 项目结构（简要）
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```
+src/
+├── components/     # 公共组件（Header、Footer、BaseHead 等）
+├── content/blog/   # 博客文章（按年份分目录的 .md / .mdx）
+├── layouts/       # 页面布局（BaseLayout、BlogPost）
+├── pages/         # 路由（首页、博客、归档、标签、关于、RSS）
+├── styles/        # 全局样式
+└── consts.ts      # 站点标题、描述等常量
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+新文章放在 `src/content/blog/` 下，frontmatter 需包含 `title`、`description`、`pubDate` 等（参见 [content.config.ts](src/content.config.ts) 中的 schema）。
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 部署
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+推送至 `master` 分支会触发 GitHub Actions 工作流，自动构建并部署到 GitHub Pages。需在仓库 **Settings → Pages** 中将 Build and deployment 的 Source 设为 **GitHub Actions**。
