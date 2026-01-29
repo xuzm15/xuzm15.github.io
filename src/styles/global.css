@@ -7,3 +7,17 @@
     --accent: 136, 58, 234;
   }
 }
+
+/* Shiki (rehype-pretty-code) code blocks: llvm, mlir, cpp, rust, etc. */
+.prose pre,
+.prose-dark pre {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+}
+.prose pre code,
+.prose-dark pre code {
+  padding: 0;
+  font-size: 0.875em;
+  background: transparent;
+}

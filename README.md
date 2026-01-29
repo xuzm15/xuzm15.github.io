@@ -6,9 +6,11 @@
 
 ## 技术栈
 
-- **Astro 5**：静态站点
+- **Astro 5**：静态站点，官方 i18n 路由（`/zh/`、`/en/`）
 - **Tailwind CSS**：样式与排版（含 `@tailwindcss/typography`）
 - **MDX**：博客内容支持 Markdown + JSX
+- **Shiki（rehype-pretty-code）**：代码高亮，默认支持 **llvm**、**mlir**（映射为 llvm）、**cpp**、**rust** 等
+- **KaTeX（remark-math + rehype-katex）**：数学公式渲染，支持 `$O(n \log n)$` 等行内公式与 `$$...$$` 块级公式
 - **部署**：GitHub Actions → GitHub Pages
 
 ## 功能
@@ -67,6 +69,11 @@ src/
 - 中文文章放在 `src/content/blog/zh/年份/` 下
 - 英文文章放在 `src/content/blog/en/年份/` 下  
 - 同一篇文章的中英文通过相同 `slug` 关联，文章页会显示「中文 | English」切换链接（若存在对应语言版本）
+
+### 代码高亮与数学公式
+
+- **代码块**：使用围栏代码块并指定语言，例如 ` ```cpp `、` ```rust `、` ```llvm `、` ```mlir `（mlir 会按 llvm 高亮）
+- **数学公式**：行内公式用 `$...$`，块级公式用 `$$...$$`，如 `$O(n \log n)$`、`$$\sum_{i=1}^n i = \frac{n(n+1)}{2}$$`
 
 ## 部署
 
