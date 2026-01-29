@@ -1,6 +1,6 @@
 ---
-title: "javaweb中annotation的总结"
-description: "javaweb中annotation的总结"
+title: "JavaWeb中的Annotation"
+description: "JavaWeb中的Annotation总结"
 pubDate: 2016-11-15T06:40:28.000Z
 tags: []
 ---
@@ -15,7 +15,7 @@ javaweb中常用的annotation。
 
 RequestMapping是一个用来处理请求地址映射的注解，可用于类或方法上。用于类上，表示类中的所有响应请求的方法都是以该地址作为父路径。
 
-RequestMapping注解有六个属性，下面我们把她分成三类进行说明。
+RequestMapping注解有六个属性，下面我们把它分成三类进行说明。
 
 1、 value， method；  
 value： 指定请求的实际地址，指定的地址可以是URI Template 模式（后面将会说明）；
@@ -28,7 +28,7 @@ consumes： 指定处理请求的提交内容类型（Content-Type），例如ap
 produces: 指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回；
 
 3、 params，headers；  
-params： 指定request中必须包含某些参数值是，才让该方法处理。
+params： 指定 request 中必须包含某些参数值时，才让该方法处理。
 
 headers： 指定request中必须包含某些指定的header值，才能让该方法处理请求。
 
@@ -102,7 +102,7 @@ public void handle(@PathVariable String version, @PathVariable String extension)
 }
 
 2 consumes、produces 示例  
-cousumes的样例：  
+consumes 的样例：  
 \[java\] view plain copy 在CODE上查看代码片派生到我的代码片  
 @Controller  
 @RequestMapping(value = “/pets”, method = RequestMethod.POST, consumes=”application/json”)  

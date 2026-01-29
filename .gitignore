@@ -5,15 +5,6 @@ dist/
 
 # dependencies
 node_modules/
-dist/
-.astro/
-.DS_Store
-.env
-pm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
 
 # logs
 npm-debug.log*
@@ -31,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# agent-generated analysis (do not commit)
+CLEANUP_ANALYSIS.md
